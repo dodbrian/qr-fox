@@ -8,7 +8,7 @@
     "lint": "web-ext lint",
     "format": "prettier --write \"**/*.{js,html,css,json}\"",
     "check": "eslint \"**/*.js\"",
-    "build": "web-ext build",
+    "build": "web-ext build --overwrite-dest",
     "start": "web-ext run",
     "test": "jest",
     "test:watch": "jest --watch"
