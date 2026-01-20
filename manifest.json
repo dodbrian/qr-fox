@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "QR‑Fox",
+  "name": "QR-Fox",
   "version": "1.0",
-  "description": "Shows a QR‑code of the current page (PNG, copy & download).",
+  "description": "Shows a QR-code of the current page (PNG, copy & download).",
   "permissions": ["activeTab"],
   "action": {
     "default_icon": {
@@ -10,7 +10,7 @@
       "48": "icons/icon-48.png",
       "96": "icons/icon-96.png"
     },
-    "default_title": "Show QR‑code",
+    "default_title": "Show QR-code",
     "default_popup": "popup/popup.html"
   },
   "background": {
@@ -23,7 +23,7 @@
   "commands": {
     "show-qr": {
       "suggested_key": { "default": "Alt+Q" },
-      "description": "Open QR‑code popup"
+      "description": "Open QR-code popup"
     }
   },
   "browser_specific_settings": {
