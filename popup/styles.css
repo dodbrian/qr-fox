@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 8px;
+  font-family: system-ui, sans-serif;
+  background: #fafafa;
+  color: #222;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #222;
+    color: #eee;
+  }
+}
+#qr svg {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 0 auto 8px;
+}
+.btn-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+button {
+  padding: 5px 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
