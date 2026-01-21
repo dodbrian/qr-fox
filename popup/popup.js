@@ -1,9 +1,16 @@
 (async () => {
   try {
-    // ----- Retrieve URL and page title from query string -----
-    const qs = new URLSearchParams(location.search);
-    const url = qs.get("url") || "";
-    const title = qs.get("title") || "qr-code";
+    // ----- Retrieve URL and page title from active tab -----
+    const [tab] = await chrome.tabs.query({
+      active: true,
+      currentWindow: true,
+    });
+    if (!tab) {
+      throw new Error("No active tab found");
+    }
+
+    const url = tab.url || "";
+    const title = tab.title || "qr-code";
 
     // ----- Validate URL input -----
     if (!url) {
@@ -14,14 +21,6 @@
     const urlInput = document.getElementById("url-display");
     if (urlInput) {
       urlInput.value = url;
-    }
-
-    // ----- Close button functionality -----
-    const closeBtn = document.getElementById("close-btn");
-    if (closeBtn) {
-      closeBtn.addEventListener("click", () => {
-        window.close();
-      });
     }
 
     // ----- Dark‑mode detection -----
