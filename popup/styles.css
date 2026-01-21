@@ -168,34 +168,3 @@ h1 {
     background: rgba(0, 0, 0, 0.05);
   }
 }
-
-.footer {
-  display: flex;
-  justify-content: flex-start;
-  flex-shrink: 0;
-}
-
-.info-btn {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: #666;
-  padding: 0;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.2s;
-}
-
-.info-btn:hover {
-  opacity: 0.7;
-}
-
-@media (prefers-color-scheme: light) {
-  .info-btn {
-    color: #999;
-  }
-}
