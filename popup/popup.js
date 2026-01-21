@@ -60,36 +60,29 @@
         throw new Error("Failed to get canvas context");
       }
 
-      // SVG to bitmap conversion with fallback
-      let bitmap;
-      try {
-        bitmap = await createImageBitmap(
-          new Blob([svgString], { type: "image/svg+xml" }),
-        );
-      } catch (bitmapError) {
-        // Fallback: render SVG as canvas using simpler method
-        // Draw background
-        ctx.fillStyle = isDark ? "#000" : "#fff";
-        ctx.fillRect(0, 0, w, h);
+      // Draw background
+      ctx.fillStyle = isDark ? "#000" : "#fff";
+      ctx.fillRect(0, 0, w, h);
 
-        // Parse SVG rects manually
-        const rects = svgString.match(/<rect[^>]*>/g) || [];
-        ctx.fillStyle = isDark ? "#fff" : "#000";
-        for (const rect of rects) {
-          const x = parseInt(rect.match(/x="([^"]*)"/)?.[1] || "0", 10);
-          const y = parseInt(rect.match(/y="([^"]*)"/)?.[1] || "0", 10);
-          const width = parseInt(rect.match(/width="([^"]*)"/)?.[1] || "1", 10);
-          const height = parseInt(
-            rect.match(/height="([^"]*)"/)?.[1] || "1",
-            10,
-          );
-          ctx.fillRect(x, y, width, height);
+      // Parse and draw SVG rects directly (more reliable than createImageBitmap)
+      const rects = svgString.match(/<rect[^>]*>/g) || [];
+      ctx.fillStyle = isDark ? "#fff" : "#000";
+      for (const rect of rects) {
+        // Skip background rect (it has width/height as percentages)
+        if (rect.includes('width="100%"')) {
+          continue;
         }
-        bitmap = null;
-      }
-
-      if (bitmap) {
-        ctx.drawImage(bitmap, 0, 0);
+        const x = parseInt(rect.match(/x="([^"]*)"/)?.[1] || "0", 10);
+        const y = parseInt(rect.match(/y="([^"]*)"/)?.[1] || "0", 10);
+        const rectWidth = parseInt(
+          rect.match(/width="([^"]*)"/)?.[1] || "1",
+          10,
+        );
+        const rectHeight = parseInt(
+          rect.match(/height="([^"]*)"/)?.[1] || "1",
+          10,
+        );
+        ctx.fillRect(x, y, rectWidth, rectHeight);
       }
 
       pngBlob = await canvas.convertToBlob({ type: "image/png" });
