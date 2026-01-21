@@ -128,8 +128,8 @@ export function generateQR(text, { dark = false } = {}) {
   const moduleSize = 4;
   const margin = 4 * moduleSize;
   const size = matrix.length * moduleSize + 2 * margin;
-  const darkColor = dark ? "#fff" : "#000";
-  const lightColor = dark ? "#000" : "#fff";
+  const darkColor = dark ? "#fff" : "#00000000";
+  const lightColor = dark ? "#00000000" : "#fff";
 
   const parts = [
     `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">`,
