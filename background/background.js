@@ -14,8 +14,8 @@ chrome.commands.onCommand.addListener(async (command) => {
   chrome.windows.create({
     url: popupURL,
     type: "popup",
-    width: 260,
-    height: 340,
+    width: 450,
+    height: 600,
     focused: true,
   });
 });

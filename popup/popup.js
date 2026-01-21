@@ -10,6 +10,20 @@
       throw new Error("URL parameter is missing");
     }
 
+    // ----- Display URL in input field -----
+    const urlInput = document.getElementById("url-display");
+    if (urlInput) {
+      urlInput.value = url;
+    }
+
+    // ----- Close button functionality -----
+    const closeBtn = document.getElementById("close-btn");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        window.close();
+      });
+    }
+
     // ----- Dark‑mode detection -----
     const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
