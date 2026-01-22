@@ -1,0 +1,82 @@
+{
+  "extensionName": {
+    "message": "QR-Fox",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Показує QR‑код поточної сторінки (PNG, копіювати та завантажувати).",
+    "description": "Description of the extension"
+  },
+  "actionTitle": {
+    "message": "Показати QR‑код",
+    "description": "Title for the browser action button"
+  },
+  "commandDescription": {
+    "message": "Відкрити спливаюче вікно QR‑коду",
+    "description": "Description of the keyboard shortcut command"
+  },
+  "popupTitle": {
+    "message": "QR‑код",
+    "description": "Title displayed in the popup header"
+  },
+  "uiCopyButton": {
+    "message": "Копіювати",
+    "description": "Button label for copying QR code to clipboard"
+  },
+  "uiDownloadButton": {
+    "message": "Завантажити",
+    "description": "Button label for downloading QR code"
+  },
+  "successCopyMessage": {
+    "message": "QR‑код скопійовано в буфер обміну",
+    "description": "Success message after copying QR code"
+  },
+  "errorCopyFailed": {
+    "message": "Не вдалося скопіювати QR‑код в буфер обміну",
+    "description": "Error message when clipboard copy fails"
+  },
+  "errorDownloadFailed": {
+    "message": "Не вдалося завантажити QR‑код",
+    "description": "Error message when download fails"
+  },
+  "errorNoActiveTab": {
+    "message": "Не знайдено активної вкладки",
+    "description": "Error when unable to get the current tab"
+  },
+  "errorMissingUrl": {
+    "message": "Відсутній параметр URL",
+    "description": "Error when tab URL is not available"
+  },
+  "errorQRGeneration": {
+    "message": "Не вдалося згенерувати QR‑код",
+    "description": "Error when QR code generation fails"
+  },
+  "errorQRContainer": {
+    "message": "Не знайдено елемент контейнера QR‑коду",
+    "description": "Error when QR display element is missing"
+  },
+  "errorSVGParsing": {
+    "message": "Не вдалося розпарсити згенероване SVG",
+    "description": "Error when SVG parsing fails"
+  },
+  "errorSVGDimensions": {
+    "message": "Недійсні розміри SVG",
+    "description": "Error when SVG dimensions are invalid"
+  },
+  "errorCanvasContext": {
+    "message": "Не вдалося отримати контекст canvas",
+    "description": "Error when canvas context cannot be obtained"
+  },
+  "errorSVGConversion": {
+    "message": "Не вдалося перетворити SVG у PNG",
+    "description": "Error when SVG to PNG conversion fails"
+  },
+  "errorPopupInit": {
+    "message": "Не вдалося відобразити QR‑код",
+    "description": "General error message shown in popup"
+  },
+  "defaultPageTitle": {
+    "message": "qr‑код",
+    "description": "Default filename prefix when page title is unavailable"
+  }
+}

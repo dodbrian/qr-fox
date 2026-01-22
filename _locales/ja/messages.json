@@ -1,0 +1,82 @@
+{
+  "extensionName": {
+    "message": "QR-Fox",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "現在のページの QR コードを表示します (PNG、コピー&ダウンロード)。",
+    "description": "Description of the extension"
+  },
+  "actionTitle": {
+    "message": "QR コードを表示",
+    "description": "Title for the browser action button"
+  },
+  "commandDescription": {
+    "message": "QR コード ポップアップを開く",
+    "description": "Description of the keyboard shortcut command"
+  },
+  "popupTitle": {
+    "message": "QR コード",
+    "description": "Title displayed in the popup header"
+  },
+  "uiCopyButton": {
+    "message": "コピー",
+    "description": "Button label for copying QR code to clipboard"
+  },
+  "uiDownloadButton": {
+    "message": "ダウンロード",
+    "description": "Button label for downloading QR code"
+  },
+  "successCopyMessage": {
+    "message": "QR コードがクリップボードにコピーされました",
+    "description": "Success message after copying QR code"
+  },
+  "errorCopyFailed": {
+    "message": "QR コードをクリップボードにコピーできませんでした",
+    "description": "Error message when clipboard copy fails"
+  },
+  "errorDownloadFailed": {
+    "message": "QR コードのダウンロードに失敗しました",
+    "description": "Error message when download fails"
+  },
+  "errorNoActiveTab": {
+    "message": "アクティブなタブが見つかりません",
+    "description": "Error when unable to get the current tab"
+  },
+  "errorMissingUrl": {
+    "message": "URL パラメータがありません",
+    "description": "Error when tab URL is not available"
+  },
+  "errorQRGeneration": {
+    "message": "QR コードの生成に失敗しました",
+    "description": "Error when QR code generation fails"
+  },
+  "errorQRContainer": {
+    "message": "QR コンテナ要素が見つかりません",
+    "description": "Error when QR display element is missing"
+  },
+  "errorSVGParsing": {
+    "message": "生成された SVG の解析に失敗しました",
+    "description": "Error when SVG parsing fails"
+  },
+  "errorSVGDimensions": {
+    "message": "SVG の寸法が無効です",
+    "description": "Error when SVG dimensions are invalid"
+  },
+  "errorCanvasContext": {
+    "message": "キャンバスコンテキストを取得できませんでした",
+    "description": "Error when canvas context cannot be obtained"
+  },
+  "errorSVGConversion": {
+    "message": "SVG から PNG への変換に失敗しました",
+    "description": "Error when SVG to PNG conversion fails"
+  },
+  "errorPopupInit": {
+    "message": "QR コードを表示できませんでした",
+    "description": "General error message shown in popup"
+  },
+  "defaultPageTitle": {
+    "message": "qr-code",
+    "description": "Default filename prefix when page title is unavailable"
+  }
+}
