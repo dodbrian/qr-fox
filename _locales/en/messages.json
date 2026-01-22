@@ -1,0 +1,82 @@
+{
+  "extensionName": {
+    "message": "QR-Fox",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Shows a QR-code of the current page (PNG, copy & download).",
+    "description": "Description of the extension"
+  },
+  "actionTitle": {
+    "message": "Show QR-code",
+    "description": "Title for the browser action button"
+  },
+  "commandDescription": {
+    "message": "Open QR-code popup",
+    "description": "Description of the keyboard shortcut command"
+  },
+  "popupTitle": {
+    "message": "QR Code",
+    "description": "Title displayed in the popup header"
+  },
+  "uiCopyButton": {
+    "message": "Copy",
+    "description": "Button label for copying QR code to clipboard"
+  },
+  "uiDownloadButton": {
+    "message": "Download",
+    "description": "Button label for downloading QR code"
+  },
+  "successCopyMessage": {
+    "message": "QR code copied to clipboard",
+    "description": "Success message after copying QR code"
+  },
+  "errorCopyFailed": {
+    "message": "Failed to copy QR code to clipboard",
+    "description": "Error message when clipboard copy fails"
+  },
+  "errorDownloadFailed": {
+    "message": "Failed to download QR code",
+    "description": "Error message when download fails"
+  },
+  "errorNoActiveTab": {
+    "message": "No active tab found",
+    "description": "Error when unable to get the current tab"
+  },
+  "errorMissingUrl": {
+    "message": "URL parameter is missing",
+    "description": "Error when tab URL is not available"
+  },
+  "errorQRGeneration": {
+    "message": "QR generation failed",
+    "description": "Error when QR code generation fails"
+  },
+  "errorQRContainer": {
+    "message": "QR container element not found",
+    "description": "Error when QR display element is missing"
+  },
+  "errorSVGParsing": {
+    "message": "Failed to parse generated SVG",
+    "description": "Error when SVG parsing fails"
+  },
+  "errorSVGDimensions": {
+    "message": "Invalid SVG dimensions",
+    "description": "Error when SVG has invalid width/height"
+  },
+  "errorCanvasContext": {
+    "message": "Failed to get canvas context",
+    "description": "Error when canvas context cannot be obtained"
+  },
+  "errorSVGConversion": {
+    "message": "SVG to PNG conversion failed",
+    "description": "Error when SVG to PNG conversion fails"
+  },
+  "errorPopupInit": {
+    "message": "Unable to display QR code",
+    "description": "General error message shown in popup"
+  },
+  "defaultPageTitle": {
+    "message": "qr-code",
+    "description": "Default filename prefix when page title is unavailable"
+  }
+}
