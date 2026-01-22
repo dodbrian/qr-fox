@@ -7,12 +7,13 @@
   "scripts": {
     "format": "prettier --write \"**/*.{js,html,css,json}\"",
     "format:check": "prettier --check \"**/*.{js,html,css,json}\"",
-    "lint": "web-ext lint && eslint \"**/*.js\"",
+    "lint": "web-ext lint && eslint \"popup/**/*.js\" \"background/**/*.js\"",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "validate": "npm run format:check && npm run lint && npm run test",
-    "build": "web-ext build --overwrite-dest",
+    "validate:i18n": "node scripts/validate-i18n.js && node scripts/validate-locales-schema.js",
+    "validate": "npm run format:check && npm run lint && npm run test && npm run validate:i18n",
+    "build": "npm run validate && web-ext build --overwrite-dest",
     "start": "web-ext run"
   },
   "devDependencies": {
