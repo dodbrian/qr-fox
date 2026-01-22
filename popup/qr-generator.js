@@ -125,7 +125,7 @@ export function generateQR(text, { dark = false } = {}) {
 
   const matrix = createQRCode(str);
 
-  const moduleSize = 4;
+  const moduleSize = 8;
   const margin = 4 * moduleSize;
   const size = matrix.length * moduleSize + 2 * margin;
   const darkColor = dark ? "#fff" : "#00000000";
