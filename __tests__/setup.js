@@ -80,7 +80,7 @@ global.URL.revokeObjectURL = jest.fn();
 
 // Mock DOMParser
 global.DOMParser = class {
-  parseFromString(svg, type) {
+  parseFromString(_svg, _type) {
     const doc = {
       documentElement: {
         tagName: "svg",

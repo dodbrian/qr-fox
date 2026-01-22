@@ -7,7 +7,7 @@
   "scripts": {
     "format": "prettier --write \"**/*.{js,html,css,json}\"",
     "format:check": "prettier --check \"**/*.{js,html,css,json}\"",
-    "lint": "web-ext lint && eslint \"popup/**/*.js\" \"background/**/*.js\"",
+    "lint": "web-ext lint && eslint \"**/*.js\"",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",

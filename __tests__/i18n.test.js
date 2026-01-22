@@ -45,6 +45,7 @@ describe("i18n Functionality", () => {
       }
 
       // Compare all locales to English
+      expect(allKeys.en).toBeDefined();
       const enKeys = new Set(allKeys.en);
       for (const locale of locales) {
         if (locale === "en") continue;
@@ -67,7 +68,7 @@ describe("i18n Functionality", () => {
       const content = fs.readFileSync(enPath, "utf-8");
       const messages = JSON.parse(content);
 
-      for (const [key, value] of Object.entries(messages)) {
+      for (const [, value] of Object.entries(messages)) {
         expect(value).toHaveProperty("message");
         expect(typeof value.message).toBe("string");
         expect(value.message.length).toBeGreaterThan(0);
@@ -146,7 +147,7 @@ describe("i18n Functionality", () => {
       const content = fs.readFileSync(enPath, "utf-8");
       const messages = JSON.parse(content);
 
-      for (const [key, value] of Object.entries(messages)) {
+      for (const [, value] of Object.entries(messages)) {
         expect(value.message.trim().length).toBeGreaterThan(0);
       }
     });
@@ -156,7 +157,7 @@ describe("i18n Functionality", () => {
       const content = fs.readFileSync(enPath, "utf-8");
       const messages = JSON.parse(content);
 
-      for (const [key, value] of Object.entries(messages)) {
+      for (const [, value] of Object.entries(messages)) {
         // Messages should be less than 500 characters
         expect(value.message.length).toBeLessThan(500);
       }

@@ -30,11 +30,24 @@
     "no-implicit-coercion": "error",
     "no-control-regex": "off"
   },
+  "ignorePatterns": ["node_modules/**", "web-ext-artifacts/**"],
   "overrides": [
     {
       "files": ["popup/**/*.js", "background/**/*.js"],
       "rules": {
         "no-alert": "off"
+      }
+    },
+    {
+      "files": ["__tests__/**/*.js"],
+      "env": {
+        "jest": true
+      }
+    },
+    {
+      "files": ["scripts/**/*.js"],
+      "rules": {
+        "no-console": "off"
       }
     }
   ]

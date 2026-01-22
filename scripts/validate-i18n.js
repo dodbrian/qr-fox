@@ -49,13 +49,14 @@ function loadLocaleMessages() {
 }
 
 /**
- * Extract chrome.i18n.getMessage() calls and data-i18n attributes.
+ * Extract chrome.i18n.getMessage() calls, data-i18n attributes, and manifest __MSG_* syntax.
  * @returns {Set} Set of message keys used in code
  */
 function extractMessageKeysFromSource() {
   const messageKeys = new Set();
   const messageKeyRegex = /chrome\.i18n\.getMessage\(\s*["']([^"']+)["']\s*\)/g;
   const dataI18nRegex = /data-i18n=["']([^"']+)["']/g;
+  const manifestI18nRegex = /__MSG_([a-zA-Z0-9_]+)__/g;
 
   for (const srcDir of SRC_DIRS) {
     if (!fs.existsSync(srcDir)) continue;
@@ -87,6 +88,17 @@ function extractMessageKeysFromSource() {
     }
   }
 
+  // Check manifest.json for __MSG_* syntax
+  const manifestPath = path.join(projectRoot, "manifest.json");
+  if (fs.existsSync(manifestPath)) {
+    const manifestContent = fs.readFileSync(manifestPath, "utf-8");
+    let match;
+
+    while ((match = manifestI18nRegex.exec(manifestContent)) !== null) {
+      messageKeys.add(match[1]);
+    }
+  }
+
   return messageKeys;
 }
 
@@ -96,9 +108,6 @@ function extractMessageKeysFromSource() {
  */
 function checkForHardcodedStrings() {
   const issues = [];
-  const hardcodedPatterns = [
-    /(?<!chrome\.i18n\.getMessage\()["'](?:Copy|Download|QR|Error|Failed|Success|tab)[^"']*["']/,
-  ];
 
   for (const srcDir of SRC_DIRS) {
     if (!fs.existsSync(srcDir)) continue;
