@@ -21,6 +21,8 @@
     const urlInput = document.getElementById("url-display");
     if (urlInput) {
       urlInput.value = url;
+      // Automatically select the URL text
+      urlInput.select();
     }
 
     // ----- Dark‑mode detection -----
