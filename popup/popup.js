@@ -126,10 +126,10 @@
       try {
         const item = new ClipboardItem({ "image/png": pngBlob });
         await navigator.clipboard.write([item]);
-        alert("QR image copied to clipboard");
+        alert("QR code copied to clipboard");
       } catch (clipboardError) {
         console.error("Clipboard copy failed:", clipboardError);
-        alert("Failed to copy to clipboard");
+        alert("Failed to copy QR code to clipboard");
       }
     });
 
@@ -145,7 +145,7 @@
         URL.revokeObjectURL(a.href);
       } catch (downloadError) {
         console.error("Download failed:", downloadError);
-        alert("Failed to download QR image");
+        alert("Failed to download QR code");
       }
     });
   } catch (error) {
@@ -156,7 +156,7 @@
       errorP.style.color = "red";
       errorP.style.margin = "10px";
       errorP.style.fontSize = "12px";
-      errorP.textContent = `Error: ${error.message}`;
+      errorP.textContent = `Unable to display QR code: ${error.message}`;
       qrContainer.appendChild(errorP);
     }
   }
