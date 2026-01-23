@@ -68,7 +68,7 @@ global.OffscreenCanvas = class {
     return {
       fillStyle: "",
       fillRect: jest.fn(),
-      measureText: jest.fn((text: string) => ({ width: 0 })),
+      measureText: jest.fn(() => ({ width: 0 })),
     } as unknown as CanvasRenderingContext2D;
   }
 
@@ -83,7 +83,7 @@ global.URL.revokeObjectURL = jest.fn();
 
 // Mock DOMParser
 global.DOMParser = class {
-  parseFromString(_svg: string, _type: string): Document {
+  parseFromString(): Document {
     const doc = {
       documentElement: {
         tagName: "svg",
