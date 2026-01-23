@@ -11,16 +11,14 @@
 
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const projectRoot = path.dirname(path.dirname(__dirname));
+// Use process.cwd() since scripts are run from project root
+const projectRoot = process.cwd();
 
 const LOCALES_DIR = path.join(projectRoot, "_locales");
 const SRC_DIRS = [
-  path.join(projectRoot, "popup"),
-  path.join(projectRoot, "background"),
+  path.join(projectRoot, "src", "popup"),
+  path.join(projectRoot, "src", "background"),
 ];
 
 interface LocalesMap {
@@ -90,7 +88,7 @@ function extractMessageKeysFromSource(): Set<string> {
   }
 
   // Also check HTML files for data-i18n attributes
-  const popupHtmlPath = path.join(projectRoot, "popup", "popup.html");
+  const popupHtmlPath = path.join(projectRoot, "src", "popup", "popup.html");
   if (fs.existsSync(popupHtmlPath)) {
     const htmlContent = fs.readFileSync(popupHtmlPath, "utf-8");
     let match;

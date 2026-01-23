@@ -15,10 +15,10 @@
     "resolveJsonModule": true
   },
   "include": [
-    "popup/**/*.ts",
-    "background/**/*.ts",
-    "scripts/**/*.ts",
-    "__tests__/**/*.ts"
+    "src/popup/**/*.ts",
+    "src/background/**/*.ts",
+    "src/scripts/**/*.ts",
+    "src/__tests__/**/*.ts"
   ],
   "exclude": ["node_modules", "dist", "web-ext-artifacts"]
 }

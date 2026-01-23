@@ -6,7 +6,8 @@
 import fs from "fs";
 import path from "path";
 
-const projectRoot = path.dirname(__dirname);
+// Use process.cwd() since tests are run from project root
+const projectRoot = process.cwd();
 
 interface LocaleMessage {
   message: string;

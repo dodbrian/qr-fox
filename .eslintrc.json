@@ -34,19 +34,19 @@
   "ignorePatterns": ["node_modules/**", "web-ext-artifacts/**", "dist/**"],
   "overrides": [
     {
-      "files": ["popup/**/*.{js,ts}", "background/**/*.{js,ts}"],
+      "files": ["src/popup/**/*.{js,ts}", "src/background/**/*.{js,ts}"],
       "rules": {
         "no-alert": "off"
       }
     },
     {
-      "files": ["__tests__/**/*.{js,ts}"],
+      "files": ["src/__tests__/**/*.{js,ts}"],
       "env": {
         "jest": true
       }
     },
     {
-      "files": ["scripts/**/*.{js,ts}"],
+      "files": ["src/scripts/**/*.{js,ts}"],
       "rules": {
         "no-console": "off"
       }

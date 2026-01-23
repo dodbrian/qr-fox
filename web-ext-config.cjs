@@ -1,12 +1,12 @@
 module.exports = {
   ignoreFiles: [
-    "scripts/**",
+    "src/scripts/**",
     "node_modules/**",
     ".*",
     "*.md",
-    "__tests__/**",
+    "src/__tests__/**",
     "web-ext-artifacts/**",
-    "popup/**/*.ts",
-    "background/**/*.ts",
+    "src/popup/**/*.ts",
+    "src/background/**/*.ts",
   ],
 };
