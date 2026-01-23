@@ -1,0 +1,11 @@
+import type { Config } from "jest";
+
+const config: Config = {
+  preset: "ts-jest",
+  testEnvironment: "node",
+  testMatch: ["**/__tests__/**/*.test.{js,ts}"],
+  moduleFileExtensions: ["ts", "js"],
+  setupFilesAfterEnv: ["<rootDir>/__tests__/setup.js"],
+};
+
+export default config;
