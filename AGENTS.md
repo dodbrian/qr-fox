@@ -1,90 +1,169 @@
 # AGENTS.md
 
-**QR‑Fox**: Firefox WebExtension that displays a QR‑code for the current page URL. Built with plain JavaScript, HTML, and CSS – no external runtime dependencies.
+**QR‑Fox**: Firefox WebExtension that displays a QR‑code for the current page URL. Built with TypeScript, HTML, and CSS – no external runtime dependencies.
 
 ## Build / Lint / Test Commands
-Requires **Node.js 20+**, **web-ext**, **eslint**, and **prettier** installed globally (or use `npx` to run locally).
 
-| Command | Description |
-|---------|-------------|
-| `web-ext lint` | Lint manifest, JS, HTML, CSS. |
-| `prettier --write "**/*.{js,html,css,json}"` | Format all source files. |
-| `eslint "**/*.js"` | Check JavaScript for style & bugs. |
-| `web-ext build` | Create `.xpi` package in `web-ext-artifacts/`. |
-| `web-ext run` | Launch Firefox with extension loaded. |
-| `npm test` | Run Jest test suite. |
-| `npm test -- -t "<pattern>"` | Run a single test by pattern. |
-| `npm run test:watch` | Re-run tests on file changes. |
+Requires **Node.js 20+**. Install dependencies with `npm install`.
+
+| Command                      | Description                                         |
+| ---------------------------- | --------------------------------------------------- |
+| `npm run build`              | Compile TypeScript to JavaScript in `dist/` folder. |
+| `npm run build:watch`        | Watch TypeScript files and auto-compile on changes. |
+| `npm run format`             | Format all files with Prettier.                     |
+| `npm run format:check`       | Check formatting without modifying files.           |
+| `npm run lint`               | Check TypeScript and JavaScript for style & bugs.   |
+| `npm test`                   | Run Jest test suite (compiles TypeScript first).    |
+| `npm test -- -t "<pattern>"` | Run tests matching Jest regex pattern.              |
+| `npm run test:watch`         | Re-run tests on file changes.                       |
+| `npm run test:coverage`      | Generate coverage report.                           |
+| `npm run validate`           | Run format check, lint, test, and i18n validation.  |
+| `npm run start`              | Build and launch Firefox with extension.            |
+| `npm run pkg`                | Validate, build, and create `.xpi` package.         |
 
 ## Code Style Guidelines
 
-- **Indentation**: 2 spaces, no tabs.
-- **Line length**: ≤ 100 characters.
-- **Quotes**: Single quotes for strings.
-- **Semicolons**: Never use; rely on ASI.
-- **Trailing commas**: Use in multiline arrays/objects.
-- **Newline at EOF**. UTF-8 encoding.
+- **Indentation**: 2 spaces, no tabs (Prettier enforced).
+- **Line length**: ≤ 100 characters (Prettier enforced).
+- **Quotes**: Single quotes for strings (Prettier enforced).
+- **Semicolons**: Never use; rely on Automatic Semicolon Insertion.
+- **Trailing commas**: Use in multiline arrays/objects (Prettier enforced).
+- **Newline at EOF**: Always required. UTF-8 encoding.
+- **Operators**: Use strict equality (`===`, `!==`) and equality checks (`eqeqeq`).
+- **Const/Let**: Use `const` by default, `let` when reassignment needed. No `var`.
 
 ## Imports & Modules
+
 - Use ES-modules (`import`/`export`). All files are modules.
 - Import relative to the file location (no absolute URLs).
 - Group imports: built-ins → third-party (none) → internal files.
 
-```js
+```ts
 // Internal imports
-import { generateQR } from './qr-generator.js'
+import { generateQR } from "./qr-generator.js";
 ```
 
 ## Naming Conventions
+
 - **Variables/functions**: `camelCase`
 - **Constants**: `UPPER_SNAKE_CASE`
-- **Files**: `kebab-case` (`qr-generator.js`)
+- **Files**: `kebab-case` (`qr-generator.ts`)
 - **HTML IDs/CSS classes**: `kebab-case` (`copy-png`)
 
-## Types & JSDoc
-Each exported function must have JSDoc describing parameters and return type:
+## Types & TypeScript
 
-```js
+### Type Annotations
+
+Use TypeScript for type safety. All exported functions must have explicit type annotations:
+
+```ts
+interface QROptions {
+  dark?: boolean
+}
+
 /**
  * Generate a QR-code SVG.
- * @param {string} text - The text to encode.
- * @param {{dark?:boolean}} [options] - Rendering options.
- * @returns {string} SVG markup.
+ * @param text - The text to encode.
+ * @param options - Rendering options.
+ * @returns SVG markup.
  */
-export function generateQR(text, { dark = false } = {}) { … }
+export function generateQR(text: string, options: QROptions = {}): string { … }
 ```
 
-Use `/** */` style, not `//`.
+### JSDoc with TypeScript
+
+Include JSDoc comments with TypeScript types for better IDE support:
+
+```ts
+/**
+ * Fetch the current tab URL from Chrome API.
+ * @returns The current page URL or undefined if unavailable.
+ */
+async function getCurrentTabUrl(): Promise<string | undefined> { … }
+```
+
+### Interfaces and Types
+
+Define interfaces for complex data structures:
+
+```ts
+interface TabInfo {
+  url: string;
+  title: string;
+  id: number;
+}
+
+interface MessageRequest {
+  action: string;
+  data?: unknown;
+}
+```
+
+Use `/** */` style JSDoc comments, not `//`.
 
 ## Error Handling
+
 - Never swallow errors silently.
 - All async work must be awaited (promise rejections are fatal).
 - Validate external inputs before use.
 - Check browser API existence (e.g., `chrome.tabs?.query`).
 
 ## DOM & CSS
+
 - Use `document.getElementById` or `querySelector`.
 - Parse SVG with `DOMParser` before inserting.
 - Never inject unsanitized strings into `innerHTML`.
 - Keep CSS specificity low; no external frameworks.
 
 ## Testing
-- Tests in `__tests__/` using Jest.
-- Test pure functions with snapshot testing.
-- Mock `chrome.tabs.query` for UI tests.
+
+- Tests in `__tests__/` directory using Jest (files must end in `.test.ts` or `.test.js`).
+- Test setup file at `__tests__/setup.ts` mocks browser APIs: `chrome.i18n`, `chrome.tabs`, `chrome.action`, etc.
+- Mock `chrome.tabs.query` for popup/UI tests; mock `chrome.i18n.getMessage` for i18n tests.
+- Prefer snapshot testing for generated SVG and complex output.
 - Name tests descriptively: `should generate SVG with dark mode enabled`.
-- Test error cases: empty input, missing params, invalid URLs.
+- Always test error cases: empty input, missing params, invalid URLs, missing locales.
+- Run single test: `npm test -- -t "test name"` (matches Jest regex pattern).
 
 ## Commits & PRs
-**Format**: `<type>(<scope>): <subject>`
-- Types: `feat`, `fix`, `style`, `docs`, `test`, `chore`
-- Subject: present tense, ≤ 72 characters
-- Include: summary, rationale, side-effects
 
-## Repository Rules
-- New files go in `background/`, `popup/`, or `icons/`.
-- Keep manifest permissions minimal (`activeTab` only).
-- URL-encode popup query params (`url`, `title`).
-- Never use unsanitized input in SVG generation.
-- Never commit: `node_modules/`, `web-ext-artifacts/`, `*.xpi`.
-- Test locally with `web-ext run` before marking complete.
+**Format**: `<type>(<scope>): <subject>`
+
+- **Types**: `feat` (new feature), `fix` (bug fix), `style` (formatting), `docs` (documentation), `test` (tests), `chore` (tooling)
+- **Scope**: `popup`, `background`, `i18n`, `qr`, etc. (optional but recommended)
+- **Subject**: Present tense, imperative, ≤ 72 characters, no period
+- **Body**: Include summary, rationale, and any side-effects (multi-line commits encouraged)
+
+## Repository Rules & Gotchas
+
+- **Source files**: Write `.ts` files in `background/`, `popup/`, or `scripts/`. Never commit `.js` files.
+- **Compiled files**: `dist/` contains compiled output; never commit compiled files (covered by `.gitignore`).
+- **Manifest**: `manifest.json` points to compiled files in `dist/` folder (e.g., `dist/popup/popup.js`).
+- **Permissions**: Keep manifest permissions minimal—use `activeTab` permission only.
+- **Query params**: URL-encode popup query params (`url`, `title`) when building chrome extension URLs.
+- **SVG safety**: Never inject unsanitized user input or URLs into SVG generation.
+- **i18n**: All UI text must use `chrome.i18n.getMessage()`. Add entries to `_locales/en/messages.json`.
+- **Never commit**: `node_modules/`, `web-ext-artifacts/`, `*.xpi`, `dist/`, `.env`, or IDE files.
+- **Before completing**: Run `npm run validate` locally (formatting, linting, tests, i18n checks).
+
+## TypeScript Configuration
+
+- **Compilation target**: ES2020 with ES modules.
+- **Type checking**: Strict mode enabled (`strict: true`).
+- **Module resolution**: Node.js style.
+- **Source maps**: Enabled for Firefox DevTools debugging.
+- **Browser APIs**: Use `@types/chrome` for accurate type definitions.
+
+## Module Declaration
+
+When declaring types for external modules or augmenting existing types:
+
+```ts
+// Module augmentation for Chrome API
+declare namespace chrome.runtime {
+  interface Message {
+    action: string;
+    data?: unknown;
+  }
+}
+```
