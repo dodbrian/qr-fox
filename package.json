@@ -13,7 +13,7 @@
     "test": "npm run build && jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "validate:i18n": "node scripts/validate-i18n.js && node scripts/validate-locales-schema.js",
+    "validate:i18n": "node dist/scripts/validate-i18n.js && node dist/scripts/validate-locales-schema.js",
     "validate": "npm run format:check && npm run lint && npm run test && npm run validate:i18n",
     "pkg": "npm run validate && web-ext build --overwrite-dest",
     "start": "npm run build && web-ext run"

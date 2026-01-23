@@ -17,7 +17,7 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const projectRoot = path.dirname(__dirname);
+const projectRoot = path.dirname(path.dirname(__dirname));
 const LOCALES_DIR = path.join(projectRoot, "_locales");
 
 interface MessageEntry {

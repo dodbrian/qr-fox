@@ -9,16 +9,4 @@ module.exports = {
     "popup/**/*.ts",
     "background/**/*.ts",
   ],
-  commands: {
-    build: {
-      mozilla: {
-        pre: ["npm run build"],
-      },
-    },
-    run: {
-      mozilla: {
-        pre: ["npm run build"],
-      },
-    },
-  },
 };

@@ -5,4 +5,4 @@ export default {
   moduleFileExtensions: ["ts", "js"],
   setupFilesAfterEnv: ["<rootDir>/__tests__/setup.ts"],
   testPathIgnorePatterns: ["<rootDir>/dist/"],
-}
+};
