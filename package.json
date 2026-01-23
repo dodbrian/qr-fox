@@ -5,21 +5,29 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "format": "prettier --write \"**/*.{js,html,css,json}\"",
-    "format:check": "prettier --check \"**/*.{js,html,css,json}\"",
-    "lint": "web-ext lint && eslint \"**/*.js\"",
-    "test": "jest",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "format": "prettier --write \"**/*.{ts,js,html,css,json}\"",
+    "format:check": "prettier --check \"**/*.{ts,js,html,css,json}\"",
+    "lint": "eslint \"**/*.{ts,js}\"",
+    "test": "npm run build && jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "validate:i18n": "node scripts/validate-i18n.js && node scripts/validate-locales-schema.js",
     "validate": "npm run format:check && npm run lint && npm run test && npm run validate:i18n",
-    "build": "npm run validate && web-ext build --overwrite-dest",
-    "start": "web-ext run"
+    "pkg": "npm run validate && web-ext build --overwrite-dest",
+    "start": "npm run build && web-ext run"
   },
   "devDependencies": {
+    "@types/chrome": "^0.1.36",
+    "@types/jest": "^30.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.53.1",
+    "@typescript-eslint/parser": "^8.53.1",
     "eslint": "^8.0.0",
     "jest": "^29.0.0",
     "prettier": "^3.0.0",
+    "ts-jest": "^29.4.6",
+    "typescript": "^5.9.3",
     "web-ext": "^9.2.0"
   },
   "engines": {

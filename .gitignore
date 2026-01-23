@@ -3,6 +3,7 @@ node_modules/
 
 # Build artifacts
 web-ext-artifacts/
+dist/
 *.xpi
 
 # Development files
