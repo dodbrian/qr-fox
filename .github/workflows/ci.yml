@@ -55,7 +55,7 @@ jobs:
         run: npm run build
 
       - name: Create package
-        run: web-ext build
+        run: npx web-ext build
 
       - name: Upload package artifact
         uses: actions/upload-artifact@v4
