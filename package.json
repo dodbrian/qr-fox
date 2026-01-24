@@ -16,7 +16,7 @@
     "test:coverage": "jest --coverage",
     "validate:i18n": "npm run build:scripts && node build/scripts/validate-i18n.js && node build/scripts/validate-locales-schema.js",
     "validate": "npm run format:check && npm run lint && npm run test && npm run validate:i18n",
-    "pkg": "npm run validate && npm run build && web-ext build --overwrite-dest",
+    "pkg": "npm run validate && npm run build && web-ext build",
     "start": "npm run build && web-ext run"
   },
   "devDependencies": {
