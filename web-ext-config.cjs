@@ -5,4 +5,9 @@ module.exports = {
   build: {
     overwriteDest: true,
   },
+  sign: {
+    apiKey: process.env.AMO_JWT_ISSUER,
+    apiSecret: process.env.AMO_JWT_SECRET,
+    channel: "listed",
+  },
 };
