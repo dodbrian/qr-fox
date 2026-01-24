@@ -19,17 +19,22 @@ type LocaleMessages = Record<string, LocaleMessage>;
 describe("i18n Functionality", () => {
   describe("Locale Files", () => {
     it("should have a _locales directory", () => {
-      const localesDir = path.join(projectRoot, "_locales");
+      const localesDir = path.join(projectRoot, "src/_locales");
       expect(fs.existsSync(localesDir)).toBe(true);
     });
 
     it("should have at least English locale", () => {
-      const enPath = path.join(projectRoot, "_locales", "en", "messages.json");
+      const enPath = path.join(
+        projectRoot,
+        "src/_locales",
+        "en",
+        "messages.json",
+      );
       expect(fs.existsSync(enPath)).toBe(true);
     });
 
     it("should have valid JSON in all locale files", () => {
-      const localesDir = path.join(projectRoot, "_locales");
+      const localesDir = path.join(projectRoot, "src/_locales");
       const locales = fs.readdirSync(localesDir);
 
       for (const locale of locales) {
@@ -41,7 +46,7 @@ describe("i18n Functionality", () => {
     });
 
     it("should have consistent message keys across locales", () => {
-      const localesDir = path.join(projectRoot, "_locales");
+      const localesDir = path.join(projectRoot, "src/_locales");
       const locales = fs.readdirSync(localesDir);
       const allKeys: Record<string, string[]> = {};
 
@@ -72,7 +77,12 @@ describe("i18n Functionality", () => {
 
   describe("Message Format", () => {
     it("should have required message and description fields", () => {
-      const enPath = path.join(projectRoot, "_locales", "en", "messages.json");
+      const enPath = path.join(
+        projectRoot,
+        "src/_locales",
+        "en",
+        "messages.json",
+      );
       const content = fs.readFileSync(enPath, "utf-8");
       const messages: LocaleMessages = JSON.parse(content);
 
@@ -89,7 +99,12 @@ describe("i18n Functionality", () => {
     });
 
     it("should have valid key naming convention (camelCase)", () => {
-      const enPath = path.join(projectRoot, "_locales", "en", "messages.json");
+      const enPath = path.join(
+        projectRoot,
+        "src/_locales",
+        "en",
+        "messages.json",
+      );
       const content = fs.readFileSync(enPath, "utf-8");
       const messages: LocaleMessages = JSON.parse(content);
 
@@ -138,7 +153,12 @@ describe("i18n Functionality", () => {
         "defaultPageTitle",
       ];
 
-      const enPath = path.join(projectRoot, "_locales", "en", "messages.json");
+      const enPath = path.join(
+        projectRoot,
+        "src/_locales",
+        "en",
+        "messages.json",
+      );
       const content = fs.readFileSync(enPath, "utf-8");
       const messages: LocaleMessages = JSON.parse(content);
       const messageKeys = Object.keys(messages);
@@ -151,7 +171,12 @@ describe("i18n Functionality", () => {
 
   describe("Message Content", () => {
     it("should have non-empty messages", () => {
-      const enPath = path.join(projectRoot, "_locales", "en", "messages.json");
+      const enPath = path.join(
+        projectRoot,
+        "src/_locales",
+        "en",
+        "messages.json",
+      );
       const content = fs.readFileSync(enPath, "utf-8");
       const messages: LocaleMessages = JSON.parse(content);
 
@@ -161,7 +186,12 @@ describe("i18n Functionality", () => {
     });
 
     it("should have reasonable message length", () => {
-      const enPath = path.join(projectRoot, "_locales", "en", "messages.json");
+      const enPath = path.join(
+        projectRoot,
+        "src/_locales",
+        "en",
+        "messages.json",
+      );
       const content = fs.readFileSync(enPath, "utf-8");
       const messages: LocaleMessages = JSON.parse(content);
 
@@ -172,7 +202,12 @@ describe("i18n Functionality", () => {
     });
 
     it("English messages should be properly capitalized", () => {
-      const enPath = path.join(projectRoot, "_locales", "en", "messages.json");
+      const enPath = path.join(
+        projectRoot,
+        "src/_locales",
+        "en",
+        "messages.json",
+      );
       const content = fs.readFileSync(enPath, "utf-8");
       const messages: LocaleMessages = JSON.parse(content);
 
@@ -191,7 +226,7 @@ describe("i18n Functionality", () => {
 
   describe("Locale Coverage", () => {
     it("should support primary languages", () => {
-      const localesDir = path.join(projectRoot, "_locales");
+      const localesDir = path.join(projectRoot, "src/_locales");
       const locales = fs.readdirSync(localesDir);
       const requiredLocales = ["en"];
       const recommendedLocales = ["de", "es", "fr"];
@@ -208,7 +243,7 @@ describe("i18n Functionality", () => {
     });
 
     it("should have translations for all locales", () => {
-      const localesDir = path.join(projectRoot, "_locales");
+      const localesDir = path.join(projectRoot, "src/_locales");
       const locales = fs.readdirSync(localesDir);
 
       expect(locales.length).toBeGreaterThan(1);

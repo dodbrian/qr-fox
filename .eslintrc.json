@@ -31,7 +31,12 @@
     "no-implicit-coercion": "error",
     "no-control-regex": "off"
   },
-  "ignorePatterns": ["node_modules/**", "web-ext-artifacts/**", "dist/**"],
+  "ignorePatterns": [
+    "node_modules/**",
+    "web-ext-artifacts/**",
+    "dist/**",
+    "build/**"
+  ],
   "overrides": [
     {
       "files": ["src/popup/**/*.{js,ts}", "src/background/**/*.{js,ts}"],
@@ -40,13 +45,13 @@
       }
     },
     {
-      "files": ["src/__tests__/**/*.{js,ts}"],
+      "files": ["__tests__/**/*.{js,ts}"],
       "env": {
         "jest": true
       }
     },
     {
-      "files": ["src/scripts/**/*.{js,ts}"],
+      "files": ["scripts/**/*.{js,ts}"],
       "rules": {
         "no-console": "off"
       }

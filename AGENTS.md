@@ -8,7 +8,8 @@ Requires **Node.js 20+**. Install dependencies with `npm install`.
 
 | Command                      | Description                                         |
 | ---------------------------- | --------------------------------------------------- |
-| `npm run build`              | Compile TypeScript to JavaScript in `dist/` folder. |
+| `npm run build`              | Build complete extension in `dist/` folder.         |
+| `npm run build:scripts`      | Compile build scripts and tests to `build/` folder. |
 | `npm run build:watch`        | Watch TypeScript files and auto-compile on changes. |
 | `npm run format`             | Format all files with Prettier.                     |
 | `npm run format:check`       | Check formatting without modifying files.           |
@@ -117,7 +118,7 @@ Use `/** */` style JSDoc comments, not `//`.
 
 ## Testing
 
-- Tests in `__tests__/` directory using Jest (files must end in `.test.ts` or `.test.js`).
+- Tests in `__tests__/` directory at root using Jest (files must end in `.test.ts` or `.test.js`).
 - Test setup file at `__tests__/setup.ts` mocks browser APIs: `chrome.i18n`, `chrome.tabs`, `chrome.action`, etc.
 - Mock `chrome.tabs.query` for popup/UI tests; mock `chrome.i18n.getMessage` for i18n tests.
 - Prefer snapshot testing for generated SVG and complex output.
@@ -136,14 +137,14 @@ Use `/** */` style JSDoc comments, not `//`.
 
 ## Repository Rules & Gotchas
 
-- **Source files**: Write `.ts` files in `background/`, `popup/`, or `scripts/`. Never commit `.js` files.
-- **Compiled files**: `dist/` contains compiled output; never commit compiled files (covered by `.gitignore`).
-- **Manifest**: `manifest.json` points to compiled files in `dist/` folder (e.g., `dist/popup/popup.js`).
+- **Source files**: Write `.ts` files in `src/background/`, `src/popup/`, `scripts/`, or `__tests__/`. Never commit `.js` files.
+- **Compiled files**: `dist/` contains compiled extension output; `build/` contains compiled scripts and tests. Never commit compiled files (covered by `.gitignore`).
+- **Manifest**: `src/manifest.json` points to files relative to `dist/` folder (e.g., `popup/popup.js`).
 - **Permissions**: Keep manifest permissions minimal—use `activeTab` permission only.
 - **Query params**: URL-encode popup query params (`url`, `title`) when building chrome extension URLs.
 - **SVG safety**: Never inject unsanitized user input or URLs into SVG generation.
 - **i18n**: All UI text must use `chrome.i18n.getMessage()`. Add entries to `_locales/en/messages.json`.
-- **Never commit**: `node_modules/`, `web-ext-artifacts/`, `*.xpi`, `dist/`, `.env`, or IDE files.
+- **Never commit**: `node_modules/`, `web-ext-artifacts/`, `*.xpi`, `dist/`, `build/`, `.env`, or IDE files.
 - **Before completing**: Run `npm run validate` locally (formatting, linting, tests, i18n checks).
 
 ## TypeScript Configuration

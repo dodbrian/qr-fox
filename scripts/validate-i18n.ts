@@ -15,7 +15,7 @@ import path from "path";
 // Use process.cwd() since scripts are run from project root
 const projectRoot = process.cwd();
 
-const LOCALES_DIR = path.join(projectRoot, "_locales");
+const LOCALES_DIR = path.join(projectRoot, "src/_locales");
 const SRC_DIRS = [
   path.join(projectRoot, "src", "popup"),
   path.join(projectRoot, "src", "background"),

@@ -1,8 +1,9 @@
 export default {
   preset: "ts-jest",
   testEnvironment: "node",
-  testMatch: ["**/src/__tests__/**/*.test.{js,ts}"],
-  moduleFileExtensions: ["ts", "js"],
-  setupFilesAfterEnv: ["<rootDir>/src/__tests__/setup.ts"],
-  testPathIgnorePatterns: ["<rootDir>/dist/"],
+  roots: ["<rootDir>/__tests__"],
+  testMatch: ["**/__tests__/**/*.test.ts"],
+  setupFilesAfterEnv: ["<rootDir>/build/__tests__/setup.js"],
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  collectCoverageFrom: ["src/**/*.ts", "!src/**/*.d.ts", "!scripts/**"],
 };

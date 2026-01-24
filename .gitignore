@@ -1,9 +1,12 @@
 # Dependencies
 node_modules/
 
+# Build outputs
+/dist/
+/build/
+
 # Build artifacts
 web-ext-artifacts/
-dist/
 *.xpi
 
 # Development files
