@@ -7,16 +7,13 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "build:scripts": "node scripts/build.mjs --scripts",
-    "build:watch": "tsc --watch",
+    "test": "npm run build && jest",
     "format": "prettier --write \"**/*.{ts,js,html,css,json}\"",
     "format:check": "prettier --check \"**/*.{ts,js,html,css,json}\"",
     "lint": "eslint \"**/*.{ts,js}\"",
-    "test": "npm run build:scripts && jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "validate:i18n": "npm run build:scripts && node build/scripts/validate-i18n.js && node build/scripts/validate-locales-schema.js",
-    "validate": "npm run format:check && npm run lint && npm run test && npm run validate:i18n",
-    "pkg": "npm run validate && npm run build && web-ext build",
+    "validate:i18n": "node build/scripts/validate-i18n.js && node build/scripts/validate-locales-schema.js",
+    "validate": "npm run format:check && npm run lint && npm run validate:i18n",
+    "pkg": "npm run build:scripts && npm run validate && npm run test && web-ext build",
     "start": "npm run build && web-ext run"
   },
   "devDependencies": {
