@@ -9,5 +9,6 @@ module.exports = {
     apiKey: process.env.AMO_JWT_ISSUER,
     apiSecret: process.env.AMO_JWT_SECRET,
     channel: "listed",
+    amoMetadata: "./amo-metadata.json",
   },
 };

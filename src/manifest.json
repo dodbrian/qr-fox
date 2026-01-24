@@ -4,7 +4,6 @@
   "name": "__MSG_extensionName__",
   "version": "1.0",
   "description": "__MSG_extensionDescription__",
-  "license": "MIT",
   "permissions": ["activeTab"],
   "action": {
     "default_icon": {
