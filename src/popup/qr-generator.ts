@@ -80,20 +80,21 @@ interface VersionInfo {
 }
 
 // QR Code version information
+// ecL format: [totalCW, totalDataCW, ecCWperBlock, numBlocks, dataCWperBlock, 0, 0]
 const VERSION_INFO: (VersionInfo | null)[] = [
   null,
-  // Version 1
+  // Version 1: 26 total, 19 data, 7 EC, 1 block
   { totalCodewords: 26, ecL: [26, 19, 7, 1, 19, 0, 0] },
-  // Version 2
+  // Version 2: 44 total, 34 data, 10 EC, 1 block
   { totalCodewords: 44, ecL: [44, 34, 10, 1, 34, 0, 0] },
-  // Version 3
+  // Version 3: 70 total, 55 data, 15 EC, 1 block
   { totalCodewords: 70, ecL: [70, 55, 15, 1, 55, 0, 0] },
-  // Version 4
+  // Version 4: 100 total, 80 data, 20 EC, 1 block
   { totalCodewords: 100, ecL: [100, 80, 20, 1, 80, 0, 0] },
-  // Version 5
+  // Version 5: 134 total, 108 data, 26 EC, 1 block
   { totalCodewords: 134, ecL: [134, 108, 26, 1, 108, 0, 0] },
-  // Version 6
-  { totalCodewords: 172, ecL: [172, 136, 36, 2, 68, 0, 0] },
+  // Version 6: 172 total, 136 data, 36 EC total (18 per block), 2 blocks, 68 data/block
+  { totalCodewords: 172, ecL: [172, 136, 18, 2, 68, 0, 0] },
 ];
 
 // Pre-computed format info strings (L level, masks 0-7)
@@ -140,7 +141,7 @@ export function generateQR(
   const moduleSize = 8;
   const margin = 4 * moduleSize;
   const size = matrix.length * moduleSize + 2 * margin;
-  const darkColor = dark ? "#fff" : "#00000000";
+  const darkColor = dark ? "#fff" : "#000";
   const lightColor = dark ? "#00000000" : "#fff";
 
   const parts: string[] = [
@@ -196,9 +197,10 @@ function createQRCode(data: string): number[][] {
   bits.push(0, 1, 0, 0);
 
   // Character count (8 bits for version 1-9 in byte mode)
+  // Note: In byte mode, character count is the number of bytes, not characters
   const charCountBits = version < 10 ? 8 : 16;
   for (let i = charCountBits - 1; i >= 0; i--) {
-    bits.push((data.length >> i) & 1);
+    bits.push((dataBytes.length >> i) & 1);
   }
 
   // Data bytes
