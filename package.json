@@ -15,7 +15,7 @@
     "validate": "npm run format:check && npm run lint && npm run validate:i18n",
     "pkg": "npm run build:scripts && npm run validate && npm run test && web-ext build",
     "start": "npm run build && web-ext run",
-    "svg-to-png": "node --loader ts-node/esm scripts/svg-to-png.ts"
+    "svg-to-png": "node --import ts-node/register scripts/svg-to-png.ts"
   },
   "devDependencies": {
     "@types/chrome": "^0.1.36",
