@@ -5,6 +5,7 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "svg-to-png": "node --loader ts-node/esm scripts/svg-to-png.ts",
     "build": "node scripts/build.mjs",
     "build:scripts": "node scripts/build.mjs --scripts",
     "test": "npm run build && jest",
@@ -18,6 +19,7 @@
   },
   "devDependencies": {
     "@types/chrome": "^0.1.36",
+    "sharp": "^0.33.5",
     "@types/jest": "^30.0.0",
     "@typescript-eslint/eslint-plugin": "^8.53.1",
     "@typescript-eslint/parser": "^8.53.1",
@@ -26,6 +28,7 @@
     "jest-environment-jsdom": "^30.2.0",
     "jsqr": "^1.4.0",
     "prettier": "^3.0.0",
+    "ts-node": "^10.9.2",
     "ts-jest": "^29.4.6",
     "typescript": "^5.9.3",
     "web-ext": "^9.2.0"
