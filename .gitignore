@@ -36,7 +36,7 @@ coverage/
 .nyc_output/
 
 # Assets
-/assets/*.png
+/assets/generated/
 
 # Temporary files
 *.tmp

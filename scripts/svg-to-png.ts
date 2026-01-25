@@ -5,7 +5,7 @@
 // Usage: npx ts-node scripts/svg-to-png.ts
 // (npm script can be added later if desired)
 
-import { readdir, readFile, writeFile } from "fs/promises";
+import { readdir, readFile, writeFile, mkdir } from "fs/promises";
 import { join, basename, extname, resolve } from "path";
 import sharp from "sharp";
 
@@ -13,6 +13,8 @@ import sharp from "sharp";
 const SIZES = [16, 32, 64] as const;
 // folder that contains the source SVGs
 const ASSETS_DIR = resolve("assets");
+// folder where generated PNGs will be placed
+const ICONS_DIR = resolve("src", "icons");
 
 /**
  * Invert the colors of an RGBA buffer.
@@ -41,7 +43,7 @@ async function processSvg(filePath: string) {
       .resize({ width: size, height: size, fit: "contain" })
       .png()
       .toBuffer();
-    const lightOut = join(resolve("assets"), `${name}-${size}-light.png`);
+    const lightOut = join(ICONS_DIR, `${name}-${size}-light.png`);
     await writeFile(lightOut, lightPng);
 
     // ----- Dark version (colors inverted) -----
@@ -57,7 +59,7 @@ async function processSvg(filePath: string) {
     })
       .png()
       .toBuffer();
-    const darkOut = join(resolve("assets"), `${name}-${size}-dark.png`);
+    const darkOut = join(ICONS_DIR, `${name}-${size}-dark.png`);
     await writeFile(darkOut, darkPng);
   }
 }
@@ -70,6 +72,10 @@ async function main() {
       console.log("No SVG files found in assets/");
       return;
     }
+
+    // Ensure icons directory exists
+    await mkdir(ICONS_DIR, { recursive: true });
+
     for (const svg of svgs) {
       const fullPath = join(ASSETS_DIR, svg);
       console.log(`Processing ${svg} …`);

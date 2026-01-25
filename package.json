@@ -5,7 +5,6 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "svg-to-png": "node --loader ts-node/esm scripts/svg-to-png.ts",
     "build": "node scripts/build.mjs",
     "build:scripts": "node scripts/build.mjs --scripts",
     "test": "npm run build && jest",
@@ -15,7 +14,8 @@
     "validate:i18n": "node build/scripts/validate-i18n.js && node build/scripts/validate-locales-schema.js",
     "validate": "npm run format:check && npm run lint && npm run validate:i18n",
     "pkg": "npm run build:scripts && npm run validate && npm run test && web-ext build",
-    "start": "npm run build && web-ext run"
+    "start": "npm run build && web-ext run",
+    "svg-to-png": "node --loader ts-node/esm scripts/svg-to-png.ts"
   },
   "devDependencies": {
     "@types/chrome": "^0.1.36",
