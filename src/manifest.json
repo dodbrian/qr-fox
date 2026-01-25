@@ -7,9 +7,11 @@
   "permissions": ["activeTab"],
   "action": {
     "default_icon": {
-      "16": "icons/icon-16.png",
-      "48": "icons/icon-48.png",
-      "96": "icons/icon-96.png"
+      "16": "icons/qr_12436477-16.png",
+      "32": "icons/qr_12436477-32.png",
+      "48": "icons/qr_12436477-48.png",
+      "64": "icons/qr_12436477-64.png",
+      "96": "icons/qr_12436477-96.png"
     },
     "default_title": "__MSG_actionTitle__",
     "default_popup": "popup/popup.html"
@@ -18,12 +20,17 @@
     "scripts": ["background/background.js"]
   },
   "icons": {
-    "48": "icons/icon-48.png",
-    "96": "icons/icon-96.png"
+    "16": "icons/qr_12436477-16.png",
+    "32": "icons/qr_12436477-32.png",
+    "48": "icons/qr_12436477-48.png",
+    "64": "icons/qr_12436477-64.png",
+    "96": "icons/qr_12436477-96.png"
   },
   "commands": {
     "show-qr": {
-      "suggested_key": { "default": "Alt+Q" },
+      "suggested_key": {
+        "default": "Alt+Q"
+      },
       "description": "__MSG_commandDescription__"
     }
   },
