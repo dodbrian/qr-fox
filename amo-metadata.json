@@ -10,15 +10,15 @@
     "url": "https://github.com/dodbrian"
   },
   "homepage": "https://github.com/dodbrian/qr-fox",
-  "support_email": "contact@zimin.tech",
+  "support_email": "qr-fox@zimin.tech",
   "support_url": "https://github.com/dodbrian/qr-fox/issues",
   "source_code_url": "https://github.com/dodbrian/qr-fox",
   "screenshots": [
     {
-      "src": "https://github.com/dodbrian/qr-fox/raw/main/assets/screenshots/popup-screenshot.png",
-      "width": 544,
-      "height": 620,
-      "caption": "QR-Fox popup showing a generated QR code with copy and download buttons"
+      "src": "https://github.com/dodbrian/qr-fox/raw/main/docs/screenshot.png",
+      "width": 1926,
+      "height": 1439,
+      "caption": "QR-Fox popup displaying a QR code for the current page with copy and download options"
     }
   ],
   "categories": ["productivity", "utilities"],
