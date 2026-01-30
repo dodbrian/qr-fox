@@ -14,6 +14,10 @@ A lightweight Firefox WebExtension that generates QR codes for the current page 
 - **Privacy-focused** - all processing happens locally, no data leaves your browser
 - **Minimal permissions** - only uses `activeTab` permission
 
+## Screenshot
+
+![QR-Fox Extension Popup](docs/screenshot.png)
+
 ## Installation
 
 ### From Source
