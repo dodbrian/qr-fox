@@ -1,17 +1,33 @@
 {
-  "name": "QR-Fox",
-  "summary": "Shows a QR-code of the current page (PNG, copy & download).",
-  "description": "QR-Fox is a lightweight Firefox WebExtension that instantly generates QR codes for any webpage you're viewing. Simply click the extension icon or press Alt+Q to open a popup displaying the QR code of the current page URL.\n\nFeatures:\n• Generate QR codes with a single click\n• Copy QR codes to clipboard\n• Download QR codes as PNG files\n• Keyboard shortcut support (Alt+Q)\n• No external dependencies or permissions beyond activeTab\n• Fast and lightweight\n\nPerfect for quickly sharing URLs, testing QR code scanning, or any situation where you need a QR code representation of your current webpage.",
-  "version": "1.0",
-  "release_notes": "Initial release of QR-Fox - a simple and efficient QR code generator for Firefox.",
-  "custom_license": "MIT",
+  "name": {
+    "en-US": "QR-Fox"
+  },
+  "summary": {
+    "en-US": "Shows a QR-code of the current page (PNG, copy & download)."
+  },
+  "description": {
+    "en-US": "QR-Fox is a lightweight Firefox WebExtension that instantly generates QR codes for any webpage you're viewing. Simply click the extension icon or press Alt+Q to open a popup displaying the QR code of the current page URL.\n\nFeatures:\n• Generate QR codes with a single click\n• Copy QR codes to clipboard\n• Download QR codes as PNG files\n• Keyboard shortcut support (Alt+Q)\n• No external dependencies or permissions beyond activeTab\n• Fast and lightweight\n\nPerfect for quickly sharing URLs, testing QR code scanning, or any situation where you need a QR code representation of your current webpage."
+  },
+  "version": {
+    "number": "1.0",
+    "license": "MIT",
+    "release_notes": {
+      "en-US": "Initial release of QR-Fox - a simple and efficient QR code generator for Firefox."
+    }
+  },
   "developer": {
     "name": "Denis Zimin",
     "url": "https://github.com/dodbrian"
   },
-  "homepage": "https://github.com/dodbrian/qr-fox",
-  "support_email": "qr-fox@zimin.tech",
-  "support_url": "https://github.com/dodbrian/qr-fox/issues",
+  "homepage": {
+    "en-US": "https://github.com/dodbrian/qr-fox"
+  },
+  "support_email": {
+    "en-US": "qr-fox@zimin.tech"
+  },
+  "support_url": {
+    "en-US": "https://github.com/dodbrian/qr-fox/issues"
+  },
   "source_code_url": "https://github.com/dodbrian/qr-fox",
   "screenshots": [
     {
@@ -21,6 +37,6 @@
       "caption": "QR-Fox popup displaying a QR code for the current page with copy and download options"
     }
   ],
-  "categories": ["productivity", "utilities"],
-  "tags": ["qr-code", "qr", "barcode", "share", "url"]
+  "categories": ["web-development", "tabs", "search-tools"],
+  "tags": ["search"]
 }
