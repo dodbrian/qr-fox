@@ -1,0 +1,82 @@
+{
+  "extensionName": {
+    "message": "QR-Fox",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "显示当前页面的二维码（PNG、复制和下载）。",
+    "description": "Description of the extension"
+  },
+  "actionTitle": {
+    "message": "显示二维码",
+    "description": "Title for the browser action button"
+  },
+  "commandDescription": {
+    "message": "打开二维码弹窗",
+    "description": "Description of the keyboard shortcut command"
+  },
+  "popupTitle": {
+    "message": "二维码",
+    "description": "Title displayed in the popup header"
+  },
+  "uiCopyButton": {
+    "message": "复制",
+    "description": "Button label for copying QR code to clipboard"
+  },
+  "uiDownloadButton": {
+    "message": "下载",
+    "description": "Button label for downloading QR code"
+  },
+  "successCopyMessage": {
+    "message": "二维码已复制到剪贴板",
+    "description": "Success message after copying QR code"
+  },
+  "errorCopyFailed": {
+    "message": "复制二维码到剪贴板失败",
+    "description": "Error message when clipboard copy fails"
+  },
+  "errorDownloadFailed": {
+    "message": "下载二维码失败",
+    "description": "Error message when download fails"
+  },
+  "errorNoActiveTab": {
+    "message": "未找到活动选项卡",
+    "description": "Error when unable to get the current tab"
+  },
+  "errorMissingUrl": {
+    "message": "缺少URL参数",
+    "description": "Error when tab URL is not available"
+  },
+  "errorQRGeneration": {
+    "message": "二维码生成失败",
+    "description": "Error when QR code generation fails"
+  },
+  "errorQRContainer": {
+    "message": "未找到二维码容器元素",
+    "description": "Error when QR display element is missing"
+  },
+  "errorSVGParsing": {
+    "message": "解析生成的SVG失败",
+    "description": "Error when SVG parsing fails"
+  },
+  "errorSVGDimensions": {
+    "message": "无效的SVG尺寸",
+    "description": "Error when SVG has invalid width/height"
+  },
+  "errorCanvasContext": {
+    "message": "无法获取画布上下文",
+    "description": "Error when canvas context cannot be obtained"
+  },
+  "errorSVGConversion": {
+    "message": "SVG转PNG转换失败",
+    "description": "Error when SVG to PNG conversion fails"
+  },
+  "errorPopupInit": {
+    "message": "无法显示二维码",
+    "description": "General error message shown in popup"
+  },
+  "defaultPageTitle": {
+    "message": "二维码",
+    "description": "Default filename prefix when page title is unavailable"
+  }
+}

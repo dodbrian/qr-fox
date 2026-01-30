@@ -1,0 +1,82 @@
+{
+  "extensionName": {
+    "message": "QR-Fox",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "顯示目前頁面的二維碼（PNG、複製及下載）。",
+    "description": "Description of the extension"
+  },
+  "actionTitle": {
+    "message": "顯示二維碼",
+    "description": "Title for the browser action button"
+  },
+  "commandDescription": {
+    "message": "開啟二維碼彈窗",
+    "description": "Description of the keyboard shortcut command"
+  },
+  "popupTitle": {
+    "message": "二維碼",
+    "description": "Title displayed in the popup header"
+  },
+  "uiCopyButton": {
+    "message": "複製",
+    "description": "Button label for copying QR code to clipboard"
+  },
+  "uiDownloadButton": {
+    "message": "下載",
+    "description": "Button label for downloading QR code"
+  },
+  "successCopyMessage": {
+    "message": "二維碼已複製到剪貼簿",
+    "description": "Success message after copying QR code"
+  },
+  "errorCopyFailed": {
+    "message": "複製二維碼到剪貼簿失敗",
+    "description": "Error message when clipboard copy fails"
+  },
+  "errorDownloadFailed": {
+    "message": "下載二維碼失敗",
+    "description": "Error message when download fails"
+  },
+  "errorNoActiveTab": {
+    "message": "未找到活動分頁",
+    "description": "Error when unable to get the current tab"
+  },
+  "errorMissingUrl": {
+    "message": "缺少URL參數",
+    "description": "Error when tab URL is not available"
+  },
+  "errorQRGeneration": {
+    "message": "二維碼生成失敗",
+    "description": "Error when QR code generation fails"
+  },
+  "errorQRContainer": {
+    "message": "未找到二維碼容器元素",
+    "description": "Error when QR display element is missing"
+  },
+  "errorSVGParsing": {
+    "message": "解析產生的SVG失敗",
+    "description": "Error when SVG parsing fails"
+  },
+  "errorSVGDimensions": {
+    "message": "無效的SVG尺寸",
+    "description": "Error when SVG has invalid width/height"
+  },
+  "errorCanvasContext": {
+    "message": "無法取得畫布內容",
+    "description": "Error when canvas context cannot be obtained"
+  },
+  "errorSVGConversion": {
+    "message": "SVG轉PNG轉換失敗",
+    "description": "Error when SVG to PNG conversion fails"
+  },
+  "errorPopupInit": {
+    "message": "無法顯示二維碼",
+    "description": "General error message shown in popup"
+  },
+  "defaultPageTitle": {
+    "message": "二維碼",
+    "description": "Default filename prefix when page title is unavailable"
+  }
+}
