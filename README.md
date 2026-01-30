@@ -35,7 +35,7 @@ A lightweight Firefox WebExtension that generates QR codes for the current page 
 5. Load in Firefox:
    - Navigate to `about:debugging#/runtime/this-firefox`
    - Click "Load Temporary Add-on"
-   - Select any file in the `dist/` directory
+   - Select the manifest file in the `dist/` directory
 
 ### From Package
 
