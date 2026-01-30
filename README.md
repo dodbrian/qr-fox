@@ -89,6 +89,18 @@ qr-fox/
 - **Prettier** - Code formatting
 - **web-ext** - Firefox extension tooling
 
+## Helpful Resources
+
+For developers interested in extending or contributing to QR-Fox, here are some valuable resources:
+
+- **[Mozilla Add-on Developer Hub](https://addons.mozilla.org/en-US/developers/)** - Resources for extension development, publishing, and managing your extensions on addons.mozilla.org
+
+- **[Mozilla WebExtensions Documentation](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions)** - Comprehensive guides and references for building Firefox extensions with the WebExtensions API
+
+- **[Extension Signing and Distribution Overview](https://extensionworkshop.com/documentation/publish/signing-and-distribution-overview/)** - Details about Firefox's extension signing process and distribution options
+
+- **[Add-ons Server API v4 Signing Documentation](https://mozilla.github.io/addons-server/topics/api/v4_frozen/signing.html)** - Technical documentation for the API used to programmatically sign Firefox extensions
+
 ## Contributing
 
 See [AGENTS.md](./AGENTS.md) for detailed coding guidelines, build instructions, and contribution rules.
