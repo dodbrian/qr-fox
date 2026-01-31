@@ -10,7 +10,7 @@ import { join, basename, extname, resolve } from "path";
 import sharp from "sharp";
 
 // sizes we want to produce
-const SIZES = [16, 32, 64, 48, 96] as const;
+const SIZES = [16, 32, 64, 48, 96, 128] as const;
 // folder that contains the source SVGs
 const ASSETS_DIR = resolve("assets");
 // folder where generated PNGs will be placed
