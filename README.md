@@ -20,7 +20,13 @@ A lightweight Firefox WebExtension that generates QR codes for the current page 
 
 ## Installation
 
-### From Source
+### Quick Install (Recommended)
+
+[![Get the Add-on](docs/get-the-addon-178x60px.dad84b42.png)](https://addons.mozilla.org/en-US/firefox/addon/qr-fox/)
+
+Click the badge above to visit the official Firefox Add-ons page and install QR-Fox directly in your browser.
+
+### Install from Source (For Developers)
 
 1. Install Node.js 20+
 2. Clone this repository:
@@ -41,7 +47,7 @@ A lightweight Firefox WebExtension that generates QR codes for the current page 
    - Click "Load Temporary Add-on"
    - Select the manifest file in the `dist/` directory
 
-### From Package
+### Build Package
 
 ```bash
 npm run pkg
