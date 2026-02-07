@@ -36,17 +36,17 @@ async function build() {
   console.log("✅ Build complete! Extension ready in dist/");
 }
 
-async function buildScripts() {
-  console.log("🔧 Compiling build scripts and tests...");
+async function buildTests() {
+  console.log("🔧 Compiling tests...");
   await execAsync("tsc -p tsconfig.build.json");
-  console.log("✅ Scripts compiled to build/");
+  console.log("✅ Tests compiled to build/");
 }
 
-// Check if running with --scripts flag
-const scriptsOnly = process.argv.includes("--scripts");
+// Check if running with --tests flag
+const testsOnly = process.argv.includes("--tests");
 
-if (scriptsOnly) {
-  buildScripts().catch(console.error);
+if (testsOnly) {
+  buildTests().catch(console.error);
 } else {
   build().catch(console.error);
 }
