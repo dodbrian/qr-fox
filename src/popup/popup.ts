@@ -73,8 +73,12 @@ function initializeI18n(): void {
     }
 
     // Clear container using removeChild for safety
-    while (qrContainer.firstChild) {
-      qrContainer.removeChild(qrContainer.firstChild);
+    const children = Array.from(qrContainer.children);
+    for (const child of children) {
+      if ((child as HTMLElement).id === "success-icon") {
+        continue;
+      }
+      qrContainer.removeChild(child);
     }
 
     const svgParser = new DOMParser();
@@ -150,6 +154,20 @@ function initializeI18n(): void {
     const timestamp = `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}`;
     const filename = `${safeTitle}_${timestamp}.png`;
 
+    const showSuccessIcon = (): void => {
+      const successIcon = document.getElementById(
+        "success-icon",
+      ) as HTMLElement;
+      if (!successIcon) {
+        console.warn("Success icon element not found");
+        return;
+      }
+      successIcon.classList.add("visible");
+      setTimeout(() => {
+        successIcon.classList.remove("visible");
+      }, 2000);
+    };
+
     // ----- Copy PNG to clipboard -----
     const copyButton = document.getElementById("copy-png") as HTMLElement;
     if (copyButton) {
@@ -157,7 +175,7 @@ function initializeI18n(): void {
         try {
           const item = new ClipboardItem({ "image/png": pngBlob });
           await navigator.clipboard.write([item]);
-          alert(chrome.i18n.getMessage("successCopyMessage"));
+          showSuccessIcon();
         } catch (clipboardError) {
           console.error("Clipboard copy failed:", clipboardError);
           alert(chrome.i18n.getMessage("errorCopyFailed"));
@@ -179,6 +197,7 @@ function initializeI18n(): void {
           a.click();
           document.body.removeChild(a);
           URL.revokeObjectURL(a.href);
+          showSuccessIcon();
         } catch (downloadError) {
           console.error("Download failed:", downloadError);
           alert(chrome.i18n.getMessage("errorDownloadFailed"));

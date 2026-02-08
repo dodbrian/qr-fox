@@ -63,6 +63,7 @@ export default [
         DOMParser: "readonly",
         ClipboardItem: "readonly",
         URL: "readonly",
+        setTimeout: "readonly",
       },
     },
     rules: {
