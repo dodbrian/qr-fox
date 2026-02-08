@@ -165,7 +165,7 @@ function initializeI18n(): void {
       successIcon.classList.add("visible");
       setTimeout(() => {
         successIcon.classList.remove("visible");
-      }, 2000);
+      }, 2100);
     };
 
     // ----- Copy PNG to clipboard -----

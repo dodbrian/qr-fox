@@ -89,6 +89,10 @@ h1 {
   opacity: 1;
 }
 
+.success-icon.visible .success-icon-circle {
+  opacity: 1;
+}
+
 .success-icon-circle {
   width: 240px;
   height: 240px;
@@ -100,6 +104,8 @@ h1 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 1;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out 0.1s;
 }
 
 .success-icon svg {
