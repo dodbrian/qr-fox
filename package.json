@@ -27,7 +27,7 @@
     "jest-environment-jsdom": "^30.2.0",
     "jsqr": "^1.4.0",
     "prettier": "^3.8.1",
-    "sharp": "^0.33.5",
+    "sharp": "^0.34.5",
     "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
