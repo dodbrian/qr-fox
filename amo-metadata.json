@@ -9,7 +9,7 @@
     "en-US": "QR-Fox is a lightweight Firefox WebExtension that instantly generates QR codes for any webpage you're viewing. Simply click the extension icon or press Alt+Q to open a popup displaying the QR code of the current page URL.\n\nFeatures:\n• Generate QR codes with a single click\n• Copy QR codes to clipboard\n• Download QR codes as PNG files\n• Keyboard shortcut support (Alt+Q)\n• No external dependencies or permissions beyond activeTab\n• Fast and lightweight\n\nPerfect for quickly sharing URLs, testing QR code scanning, or any situation where you need a QR code representation of your current webpage."
   },
   "version": {
-    "number": "1.1.0",
+    "number": "1.1.1",
     "license": "MIT",
     "release_notes": {
       "en-US": "Initial release of QR-Fox - a simple and efficient QR code generator for Firefox."
