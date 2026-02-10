@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.4](https://github.com/dodbrian/qr-fox/compare/v1.1.3...v1.1.4) (2026-02-10)
+
+### Bug Fixes
+
+* **release:** format files after version bump to fix prettier issues ([1c8d857](https://github.com/dodbrian/qr-fox/commit/1c8d857ff3001e67f9047f226e4c78e03d814169))
+
 ## [1.1.3](https://github.com/dodbrian/qr-fox/compare/v1.1.2...v1.1.3) (2026-02-10)
 
 ## [1.1.2](https://github.com/dodbrian/qr-fox/compare/v1.1.1...v1.1.2) (2026-02-10)
