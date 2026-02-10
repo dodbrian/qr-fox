@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.5](https://github.com/dodbrian/qr-fox/compare/v1.1.4...v1.1.5) (2026-02-10)
+
+### Bug Fixes
+
+* **release:** set empty AMO credentials for web-ext build in CI ([176b1b6](https://github.com/dodbrian/qr-fox/commit/176b1b64a7a310e3687ef0eeda6f41eb6702e5f3))
+
 ## [1.1.4](https://github.com/dodbrian/qr-fox/compare/v1.1.3...v1.1.4) (2026-02-10)
 
 ### Bug Fixes
