@@ -14,9 +14,10 @@
     "lint": "eslint \"**/*.{ts,js}\"",
     "validate:i18n": "node --import ts-node/register scripts/validate-i18n.ts && node --import ts-node/register scripts/validate-locales-schema.ts",
     "validate": "npm run format:check && npm run lint && npm run validate:i18n",
-    "pkg": "bash -c 'set -a && source .env && npm run validate && npm run test && npm run build && web-ext build'",
+    "pkg": "bash -c 'set -a && [ -f .env ] && source .env; npm run validate && npm run test && npm run build && web-ext build'",
     "start": "npm run build && web-ext run",
-    "svg-to-png": "node --import ts-node/register scripts/svg-to-png.ts"
+    "svg-to-png": "node --import ts-node/register scripts/svg-to-png.ts",
+    "release": "release-it --ci --no-npm.publish \"$@\""
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^10.0.5",

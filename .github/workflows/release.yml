@@ -46,7 +46,7 @@ jobs:
       - name: Release with version bump
         id: release
         run: |
-          npx release-it --ci --no-npm.publish ${{ github.event.inputs.version-bump != 'none' && github.event.inputs.version-bump || '' }}
+          npm run release -- ${{ github.event.inputs.version-bump != 'none' && github.event.inputs.version-bump || '' }}
           echo "version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
