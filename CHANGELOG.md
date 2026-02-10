@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.2](https://github.com/dodbrian/qr-fox/compare/v1.1.1...v1.1.2) (2026-02-10)
+
+### Bug Fixes
+
+* **release:** use npm script instead of npx, make .env sourcing optional ([92e4897](https://github.com/dodbrian/qr-fox/commit/92e489782d8d32fcc54610b12fdadc0ef1065797))
+
 ## [1.1.1](https://github.com/dodbrian/qr-fox/compare/v1.1.0...v1.1.1) (2026-02-10)
 
 ## 1.1.0 (2026-02-10)
