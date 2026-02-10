@@ -130,7 +130,7 @@ Use `/** */` style JSDoc comments, not `//`.
 
 **Format**: `<type>(<scope>): <subject>`
 
-- **Types**: `feat` (new feature), `fix` (bug fix), `style` (formatting), `docs` (documentation), `test` (tests), `chore` (tooling)
+- **Types**: `feat` (new feature), `fix` (bug fix), `style` (formatting), `docs` (documentation), `test` (tests), `chore` (tooling), `refac` (refactoring)
 - **Scope**: `popup`, `background`, `i18n`, `qr`, etc. (optional but recommended)
 - **Subject**: Present tense, imperative, ≤ 72 characters, no period
 - **Body**: Include summary, rationale, and any side-effects (multi-line commits encouraged)
