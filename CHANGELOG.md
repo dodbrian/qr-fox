@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.6](https://github.com/dodbrian/qr-fox/compare/v1.1.5...v1.1.6) (2026-02-10)
+
+### Bug Fixes
+
+* **release:** upload *.zip instead of *.xpi for web-ext artifacts ([fd8f840](https://github.com/dodbrian/qr-fox/commit/fd8f840df350703de719758c3b095e9d40a49ed3))
+
 ## [1.1.5](https://github.com/dodbrian/qr-fox/compare/v1.1.4...v1.1.5) (2026-02-10)
 
 ### Bug Fixes
