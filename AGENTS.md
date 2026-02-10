@@ -9,15 +9,12 @@ Requires **Node.js 20+**. Install dependencies with `npm install`.
 | Command                      | Description                                         |
 | ---------------------------- | --------------------------------------------------- |
 | `npm run build`              | Build complete extension in `dist/` folder.         |
-| `npm run build:scripts`      | Compile build scripts and tests to `build/` folder. |
-| `npm run build:watch`        | Watch TypeScript files and auto-compile on changes. |
+| `npm run build:tests`        | Compile build scripts and tests to `build/` folder. |
 | `npm run format`             | Format all files with Prettier.                     |
 | `npm run format:check`       | Check formatting without modifying files.           |
 | `npm run lint`               | Check TypeScript and JavaScript for style & bugs.   |
 | `npm test`                   | Run Jest test suite (compiles TypeScript first).    |
 | `npm test -- -t "<pattern>"` | Run tests matching Jest regex pattern.              |
-| `npm run test:watch`         | Re-run tests on file changes.                       |
-| `npm run test:coverage`      | Generate coverage report.                           |
 | `npm run validate`           | Run format check, lint, test, and i18n validation.  |
 | `npm run start`              | Build and launch Firefox with extension.            |
 | `npm run pkg`                | Validate, build, and create `.xpi` package.         |
@@ -130,7 +127,15 @@ Use `/** */` style JSDoc comments, not `//`.
 
 **Format**: `<type>(<scope>): <subject>`
 
-- **Types**: `feat` (new feature), `fix` (bug fix), `style` (formatting), `docs` (documentation), `test` (tests), `chore` (tooling), `refac` (refactoring)
+- **Types** (ONLY these are allowed): `feat`, `fix`, `style`, `docs`, `test`, `chore`, `refac`
+  - `feat` - New feature
+  - `fix` - Bug fix
+  - `style` - Formatting changes only
+  - `docs` - Documentation changes
+  - `test` - Test additions or modifications
+  - `chore` - Tooling, dependencies, build process
+  - `refac` - Code refactoring (no functionality change)
+  - **IMPORTANT**: NO other commit types are acceptable (e.g., no `build`, `ci`, `perf`, `refactor`, `revert`)
 - **Scope**: `popup`, `background`, `i18n`, `qr`, etc. (optional but recommended)
 - **Subject**: Present tense, imperative, ≤ 72 characters, no period
 - **Body**: Include summary, rationale, and any side-effects (multi-line commits encouraged)
