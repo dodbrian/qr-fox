@@ -7,6 +7,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "build:tests": "node scripts/build.mjs --tests",
+    "sync-version": "node scripts/sync-version.mjs",
     "test": "npm run build:tests && jest",
     "format": "prettier --write \"**/*.{ts,js,html,css,json}\"",
     "format:check": "prettier --check \"**/*.{ts,js,html,css,json}\"",
@@ -18,6 +19,7 @@
     "svg-to-png": "node --import ts-node/register scripts/svg-to-png.ts"
   },
   "devDependencies": {
+    "@release-it/conventional-changelog": "^10.0.5",
     "@types/chrome": "^0.1.36",
     "@types/jest": "^30.0.0",
     "@typescript-eslint/eslint-plugin": "^8.54.0",
@@ -27,6 +29,7 @@
     "jest-environment-jsdom": "^30.2.0",
     "jsqr": "^1.4.0",
     "prettier": "^3.8.1",
+    "release-it": "^19.2.4",
     "sharp": "^0.34.5",
     "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
