@@ -37,12 +37,6 @@
       "caption": "QR-Fox popup displaying a QR code for the current page with copy and download options"
     }
   ],
-  "categories": [
-    "web-development",
-    "tabs",
-    "search-tools"
-  ],
-  "tags": [
-    "search"
-  ]
+  "categories": ["web-development", "tabs", "search-tools"],
+  "tags": ["search"]
 }
