@@ -56,6 +56,9 @@ jobs:
 
       - name: Create package
         run: npm run pkg
+        env:
+          AMO_JWT_ISSUER: ""
+          AMO_JWT_SECRET: ""
 
       - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v2
