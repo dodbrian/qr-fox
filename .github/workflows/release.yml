@@ -63,6 +63,6 @@ jobs:
       - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: web-ext-artifacts/*.xpi
+          files: web-ext-artifacts/*.zip
           tag_name: v${{ steps.release.outputs.version }}
           generate_release_notes: true
