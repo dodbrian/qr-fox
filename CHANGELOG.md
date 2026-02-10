@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.1.7](https://github.com/dodbrian/qr-fox/compare/v1.1.6...v1.1.7) (2026-02-10)
+
 ## [1.1.6](https://github.com/dodbrian/qr-fox/compare/v1.1.5...v1.1.6) (2026-02-10)
 
 ### Bug Fixes
