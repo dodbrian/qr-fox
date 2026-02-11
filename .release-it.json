@@ -11,7 +11,7 @@
     "release": true,
     "releaseName": "v${version}",
     "preRelease": false,
-    "assets": ["web-ext-artifacts/*.xpi"]
+    "assets": ["web-ext-artifacts/*.zip"]
   },
   "plugins": {
     "@release-it/conventional-changelog": {
@@ -50,6 +50,7 @@
     }
   },
   "hooks": {
-    "after:bump": "npm run sync-version"
+    "after:bump": "npm run sync-version",
+    "before:release": "npm run pkg"
   }
 }
