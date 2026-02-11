@@ -1,6 +1,6 @@
 {
   "name": "qr-fox",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "Firefox WebExtension that displays a QR-code for the current page URL",
   "type": "module",
   "private": true,
