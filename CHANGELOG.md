@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.2.0](https://github.com/dodbrian/qr-fox/compare/v1.1.11...v1.2.0) (2026-02-11)
+
+### Features
+
+* **i18n:** add 7 new language translations ([3233ff4](https://github.com/dodbrian/qr-fox/commit/3233ff412cf4f3df921ee760e2c5b86b4700936e))
+
+### Bug Fixes
+
+* **i18n:** fix manifest.json path in validation script ([e1ab0c2](https://github.com/dodbrian/qr-fox/commit/e1ab0c2120f353a22f35d64092390d085dd91b91))
+* **i18n:** remove unused successCopyMessage key from all locales ([59eb3f8](https://github.com/dodbrian/qr-fox/commit/59eb3f8330322a7428c1f397b69dc023fb5414b1))
+
 ## [1.1.11](https://github.com/dodbrian/qr-fox/compare/v1.1.8...v1.1.11) (2026-02-11)
 
 ### Bug Fixes
