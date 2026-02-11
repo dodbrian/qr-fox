@@ -114,6 +114,51 @@ describe("i18n Functionality", () => {
     });
   });
 
+  describe("Message Usage", () => {
+    it("should have messages for all manifest keys", () => {
+      const manifestPath = path.join(projectRoot, "src/manifest.json");
+      const manifestContent = fs.readFileSync(manifestPath, "utf-8");
+      const manifest = JSON.parse(manifestContent);
+
+      const manifestMessageKeys = new Set<string>();
+
+      const extractMessageKeys = (value: unknown) => {
+        if (typeof value === "string") {
+          const matches = value.match(/__MSG_([a-zA-Z0-9_]+)__/g);
+          if (matches) {
+            for (const match of matches) {
+              const key = match.replace("__MSG_", "").replace("__", "");
+              manifestMessageKeys.add(key);
+            }
+          }
+        } else if (typeof value === "object" && value !== null) {
+          for (const nestedValue of Object.values(
+            value as Record<string, unknown>,
+          )) {
+            extractMessageKeys(nestedValue);
+          }
+        }
+      };
+
+      extractMessageKeys(manifest);
+
+      const enPath = path.join(
+        projectRoot,
+        "src/_locales",
+        "en",
+        "messages.json",
+      );
+      const content = fs.readFileSync(enPath, "utf-8");
+      const messages: LocaleMessages = JSON.parse(content);
+      const messageKeys = Object.keys(messages);
+
+      const missingKeys = [...manifestMessageKeys].filter(
+        (k) => !messageKeys.includes(k),
+      );
+      expect(missingKeys).toEqual([]);
+    });
+  });
+
   describe("chrome.i18n API", () => {
     it("should mock getMessage correctly", () => {
       const message = global.chrome.i18n.getMessage("extensionName");
@@ -135,6 +180,7 @@ describe("i18n Functionality", () => {
         "extensionName",
         "extensionDescription",
         "actionTitle",
+        "commandDescription",
         "popupTitle",
         "uiCopyButton",
         "uiDownloadButton",
