@@ -234,10 +234,11 @@ function validateI18n(): void {
   }
 
   if (unusedKeys.length > 0) {
-    console.warn(
-      `   ⚠ ${unusedKeys.length} message keys defined but not used:`,
+    console.error(
+      `   ✗ ${unusedKeys.length} message keys defined but not used:`,
     );
-    unusedKeys.forEach((k) => console.warn(`     - ${k}`));
+    unusedKeys.forEach((k) => console.error(`     - ${k}`));
+    hasErrors = true;
   }
 
   if (missingKeys.length === 0 && unusedKeys.length === 0) {
@@ -248,12 +249,13 @@ function validateI18n(): void {
   console.log("4. Checking for hardcoded strings...");
   const hardcodedIssues = checkForHardcodedStrings();
   if (hardcodedIssues.length > 0) {
-    console.warn(
-      `   ⚠ ${hardcodedIssues.length} potential hardcoded strings found:`,
+    console.error(
+      `   ✗ ${hardcodedIssues.length} potential hardcoded strings found:`,
     );
     hardcodedIssues.forEach((issue) => {
-      console.warn(`     - ${issue.file}:${issue.line}: ${issue.content}`);
+      console.error(`     - ${issue.file}:${issue.line}: ${issue.content}`);
     });
+    hasErrors = true;
   } else {
     console.log("   ✓ No hardcoded strings detected\n");
   }
