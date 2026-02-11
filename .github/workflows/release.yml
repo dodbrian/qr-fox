@@ -46,7 +46,6 @@ jobs:
       - name: Release with version bump
         run: |
           npm run release -- ${{ github.event.inputs.version-bump != 'none' && github.event.inputs.version-bump || '' }}
-          npm run format
           git add -u
           git commit --amend --no-edit
         env:
