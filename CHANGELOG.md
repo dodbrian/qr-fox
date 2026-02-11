@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.11](https://github.com/dodbrian/qr-fox/compare/v1.1.8...v1.1.11) (2026-02-11)
+
+### Bug Fixes
+
+* **release:** build and upload zip via release-it only ([3af29fe](https://github.com/dodbrian/qr-fox/commit/3af29fefab1cb1aa69857ed89da0f87948fdc30b))
+* **release:** format after sync-version ([7590194](https://github.com/dodbrian/qr-fox/commit/75901946c94414eb3fb56b6f89750c26a74c76b4))
+
 ## [1.1.10](https://github.com/dodbrian/qr-fox/compare/v1.1.8...v1.1.10) (2026-02-11)
 
 ### Bug Fixes
