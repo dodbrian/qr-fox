@@ -99,7 +99,7 @@ function extractMessageKeysFromSource(): Set<string> {
   }
 
   // Check manifest.json for __MSG_* syntax
-  const manifestPath = path.join(projectRoot, "manifest.json");
+  const manifestPath = path.join(projectRoot, "src", "manifest.json");
   if (fs.existsSync(manifestPath)) {
     const manifestContent = fs.readFileSync(manifestPath, "utf-8");
     let match;
