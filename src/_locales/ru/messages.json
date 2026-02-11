@@ -27,10 +27,6 @@
     "message": "Скачать",
     "description": "Button label for downloading QR code"
   },
-  "successCopyMessage": {
-    "message": "QR-код скопирован в буфер обмена",
-    "description": "Success message after copying QR code"
-  },
   "errorCopyFailed": {
     "message": "Не удалось скопировать QR-код в буфер обмена",
     "description": "Error message when clipboard copy fails"

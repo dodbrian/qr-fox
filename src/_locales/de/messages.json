@@ -27,10 +27,6 @@
     "message": "Herunterladen",
     "description": "Button label for downloading QR code"
   },
-  "successCopyMessage": {
-    "message": "QR-Code in die Zwischenablage kopiert",
-    "description": "Success message after copying QR code"
-  },
   "errorCopyFailed": {
     "message": "QR-Code konnte nicht in die Zwischenablage kopiert werden",
     "description": "Error message when clipboard copy fails"

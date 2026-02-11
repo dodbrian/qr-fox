@@ -27,10 +27,6 @@
     "message": "ダウンロード",
     "description": "Button label for downloading QR code"
   },
-  "successCopyMessage": {
-    "message": "QR コードがクリップボードにコピーされました",
-    "description": "Success message after copying QR code"
-  },
   "errorCopyFailed": {
     "message": "QR コードをクリップボードにコピーできませんでした",
     "description": "Error message when clipboard copy fails"

@@ -27,10 +27,6 @@
     "message": "下載",
     "description": "Button label for downloading QR code"
   },
-  "successCopyMessage": {
-    "message": "二維碼已複製到剪貼簿",
-    "description": "Success message after copying QR code"
-  },
   "errorCopyFailed": {
     "message": "複製二維碼到剪貼簿失敗",
     "description": "Error message when clipboard copy fails"

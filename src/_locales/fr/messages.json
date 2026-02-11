@@ -27,10 +27,6 @@
     "message": "Télécharger",
     "description": "Button label for downloading QR code"
   },
-  "successCopyMessage": {
-    "message": "Code QR copié dans le presse-papiers",
-    "description": "Success message after copying QR code"
-  },
   "errorCopyFailed": {
     "message": "Échec de la copie du code QR dans le presse-papiers",
     "description": "Error message when clipboard copy fails"
