@@ -184,7 +184,6 @@ describe("i18n Functionality", () => {
         "popupTitle",
         "uiCopyButton",
         "uiDownloadButton",
-        "successCopyMessage",
         "errorCopyFailed",
         "errorDownloadFailed",
         "errorNoActiveTab",
