@@ -1,0 +1,78 @@
+{
+  "extensionName": {
+    "message": "QR-Fox",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "يعرض رمز الاستجابة السريعة للصفحة الحالية (PNG، النسخ والتنزيل).",
+    "description": "Description of the extension"
+  },
+  "actionTitle": {
+    "message": "إظهار رمز الاستجابة السريعة",
+    "description": "Title for the browser action button"
+  },
+  "commandDescription": {
+    "message": "فتح نافذة منبثقة لرمز الاستجابة السريعة",
+    "description": "Description of the keyboard shortcut command"
+  },
+  "popupTitle": {
+    "message": "رمز الاستجابة السريعة",
+    "description": "Title displayed in the popup header"
+  },
+  "uiCopyButton": {
+    "message": "نسخ",
+    "description": "Button label for copying QR code to clipboard"
+  },
+  "uiDownloadButton": {
+    "message": "تنزيل",
+    "description": "Button label for downloading QR code"
+  },
+  "errorCopyFailed": {
+    "message": "فشل نسخ رمز الاستجابة السريعة إلى الحافظة",
+    "description": "Error message when clipboard copy fails"
+  },
+  "errorDownloadFailed": {
+    "message": "فشل تنزيل رمز الاستجابة السريعة",
+    "description": "Error message when download fails"
+  },
+  "errorNoActiveTab": {
+    "message": "لم يتم العثور على علامة تبويب نشطة",
+    "description": "Error when unable to get the current tab"
+  },
+  "errorMissingUrl": {
+    "message": "معلمة الرابط مفقودة",
+    "description": "Error when tab URL is not available"
+  },
+  "errorQRGeneration": {
+    "message": "فشل إنشاء رمز الاستجابة السريعة",
+    "description": "Error when QR code generation fails"
+  },
+  "errorQRContainer": {
+    "message": "عنصر حاوية رمز الاستجابة السريعة غير موجود",
+    "description": "Error when QR display element is missing"
+  },
+  "errorSVGParsing": {
+    "message": "فشل تحليل SVG المُنشأ",
+    "description": "Error when SVG parsing fails"
+  },
+  "errorSVGDimensions": {
+    "message": "أبعاد SVG غير صالحة",
+    "description": "Error when SVG has invalid width/height"
+  },
+  "errorCanvasContext": {
+    "message": "فشل الحصول على سياق Canvas",
+    "description": "Error when canvas context cannot be obtained"
+  },
+  "errorSVGConversion": {
+    "message": "فشل تحويل SVG إلى PNG",
+    "description": "Error when SVG to PNG conversion fails"
+  },
+  "errorPopupInit": {
+    "message": "تعذر عرض رمز الاستجابة السريعة",
+    "description": "General error message shown in popup"
+  },
+  "defaultPageTitle": {
+    "message": "qr-code",
+    "description": "Default filename prefix when page title is unavailable"
+  }
+}

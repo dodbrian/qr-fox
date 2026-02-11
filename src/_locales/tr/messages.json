@@ -1,0 +1,78 @@
+{
+  "extensionName": {
+    "message": "QR-Fox",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Geçerli sayfanın QR kodunu gösterir (PNG, kopyalama ve indirme).",
+    "description": "Description of the extension"
+  },
+  "actionTitle": {
+    "message": "QR kodunu göster",
+    "description": "Title for the browser action button"
+  },
+  "commandDescription": {
+    "message": "QR kod açılır penceresini aç",
+    "description": "Description of the keyboard shortcut command"
+  },
+  "popupTitle": {
+    "message": "QR Kod",
+    "description": "Title displayed in the popup header"
+  },
+  "uiCopyButton": {
+    "message": "Kopyala",
+    "description": "Button label for copying QR code to clipboard"
+  },
+  "uiDownloadButton": {
+    "message": "İndir",
+    "description": "Button label for downloading QR code"
+  },
+  "errorCopyFailed": {
+    "message": "QR kodu panoya kopyalanamadı",
+    "description": "Error message when clipboard copy fails"
+  },
+  "errorDownloadFailed": {
+    "message": "QR kodu indirilemedi",
+    "description": "Error message when download fails"
+  },
+  "errorNoActiveTab": {
+    "message": "Etkin sekme bulunamadı",
+    "description": "Error when unable to get the current tab"
+  },
+  "errorMissingUrl": {
+    "message": "URL parametresi eksik",
+    "description": "Error when tab URL is not available"
+  },
+  "errorQRGeneration": {
+    "message": "QR oluşturma başarısız oldu",
+    "description": "Error when QR code generation fails"
+  },
+  "errorQRContainer": {
+    "message": "QR kapsayıcı öğesi bulunamadı",
+    "description": "Error when QR display element is missing"
+  },
+  "errorSVGParsing": {
+    "message": "Oluşturulan SVG ayrıştırılamadı",
+    "description": "Error when SVG parsing fails"
+  },
+  "errorSVGDimensions": {
+    "message": "Geçersiz SVG boyutları",
+    "description": "Error when SVG has invalid width/height"
+  },
+  "errorCanvasContext": {
+    "message": "Canvas bağlamı alınamadı",
+    "description": "Error when canvas context cannot be obtained"
+  },
+  "errorSVGConversion": {
+    "message": "SVG'den PNG'ye dönüşüm başarısız oldu",
+    "description": "Error when SVG to PNG conversion fails"
+  },
+  "errorPopupInit": {
+    "message": "QR kodu görüntülenemiyor",
+    "description": "General error message shown in popup"
+  },
+  "defaultPageTitle": {
+    "message": "qr-code",
+    "description": "Default filename prefix when page title is unavailable"
+  }
+}

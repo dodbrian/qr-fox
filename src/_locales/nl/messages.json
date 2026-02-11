@@ -1,0 +1,78 @@
+{
+  "extensionName": {
+    "message": "QR-Fox",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Toont een QR-code van de huidige pagina (PNG, kopiëren en downloaden).",
+    "description": "Description of the extension"
+  },
+  "actionTitle": {
+    "message": "QR-code tonen",
+    "description": "Title for the browser action button"
+  },
+  "commandDescription": {
+    "message": "QR-code popup openen",
+    "description": "Description of the keyboard shortcut command"
+  },
+  "popupTitle": {
+    "message": "QR-code",
+    "description": "Title displayed in the popup header"
+  },
+  "uiCopyButton": {
+    "message": "Kopiëren",
+    "description": "Button label for copying QR code to clipboard"
+  },
+  "uiDownloadButton": {
+    "message": "Downloaden",
+    "description": "Button label for downloading QR code"
+  },
+  "errorCopyFailed": {
+    "message": "QR-code kon niet naar klembord worden gekopieerd",
+    "description": "Error message when clipboard copy fails"
+  },
+  "errorDownloadFailed": {
+    "message": "QR-code downloaden mislukt",
+    "description": "Error message when download fails"
+  },
+  "errorNoActiveTab": {
+    "message": "Geen actief tabblad gevonden",
+    "description": "Error when unable to get the current tab"
+  },
+  "errorMissingUrl": {
+    "message": "URL-parameter ontbreekt",
+    "description": "Error when tab URL is not available"
+  },
+  "errorQRGeneration": {
+    "message": "QR-generatie mislukt",
+    "description": "Error when QR code generation fails"
+  },
+  "errorQRContainer": {
+    "message": "QR-container element niet gevonden",
+    "description": "Error when QR display element is missing"
+  },
+  "errorSVGParsing": {
+    "message": "SVG-parseren mislukt",
+    "description": "Error when SVG parsing fails"
+  },
+  "errorSVGDimensions": {
+    "message": "Ongeldige SVG-afmetingen",
+    "description": "Error when SVG has invalid width/height"
+  },
+  "errorCanvasContext": {
+    "message": "Canvas-context ophalen mislukt",
+    "description": "Error when canvas context cannot be obtained"
+  },
+  "errorSVGConversion": {
+    "message": "SVG naar PNG conversie mislukt",
+    "description": "Error when SVG to PNG conversion fails"
+  },
+  "errorPopupInit": {
+    "message": "QR-code kan niet worden weergegeven",
+    "description": "General error message shown in popup"
+  },
+  "defaultPageTitle": {
+    "message": "qr-code",
+    "description": "Default filename prefix when page title is unavailable"
+  }
+}

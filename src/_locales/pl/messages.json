@@ -1,0 +1,78 @@
+{
+  "extensionName": {
+    "message": "QR-Fox",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Wyświetla kod QR bieżącej strony (PNG, kopia i pobieranie).",
+    "description": "Description of the extension"
+  },
+  "actionTitle": {
+    "message": "Pokaż kod QR",
+    "description": "Title for the browser action button"
+  },
+  "commandDescription": {
+    "message": "Otwórz wyskakujące okienko kodu QR",
+    "description": "Description of the keyboard shortcut command"
+  },
+  "popupTitle": {
+    "message": "Kod QR",
+    "description": "Title displayed in the popup header"
+  },
+  "uiCopyButton": {
+    "message": "Kopiuj",
+    "description": "Button label for copying QR code to clipboard"
+  },
+  "uiDownloadButton": {
+    "message": "Pobierz",
+    "description": "Button label for downloading QR code"
+  },
+  "errorCopyFailed": {
+    "message": "Nie udało się skopiować kodu QR do schowka",
+    "description": "Error message when clipboard copy fails"
+  },
+  "errorDownloadFailed": {
+    "message": "Nie udało się pobrać kodu QR",
+    "description": "Error message when download fails"
+  },
+  "errorNoActiveTab": {
+    "message": "Nie znaleziono aktywnej karty",
+    "description": "Error when unable to get the current tab"
+  },
+  "errorMissingUrl": {
+    "message": "Brak parametru URL",
+    "description": "Error when tab URL is not available"
+  },
+  "errorQRGeneration": {
+    "message": "Generowanie kodu QR niepowiodło się",
+    "description": "Error when QR code generation fails"
+  },
+  "errorQRContainer": {
+    "message": "Nie znaleziono elementu kontenera QR",
+    "description": "Error when QR display element is missing"
+  },
+  "errorSVGParsing": {
+    "message": "Nie udało się przeanalizować wygenerowanego SVG",
+    "description": "Error when SVG parsing fails"
+  },
+  "errorSVGDimensions": {
+    "message": "Nieprawidłowe wymiary SVG",
+    "description": "Error when SVG has invalid width/height"
+  },
+  "errorCanvasContext": {
+    "message": "Nie udało się uzyskać kontekstu canvas",
+    "description": "Error when canvas context cannot be obtained"
+  },
+  "errorSVGConversion": {
+    "message": "Konwersja SVG na PNG nie powiodła się",
+    "description": "Error when SVG to PNG conversion fails"
+  },
+  "errorPopupInit": {
+    "message": "Nie można wyświetlić kodu QR",
+    "description": "General error message shown in popup"
+  },
+  "defaultPageTitle": {
+    "message": "qr-code",
+    "description": "Default filename prefix when page title is unavailable"
+  }
+}
