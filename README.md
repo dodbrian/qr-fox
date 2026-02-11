@@ -26,34 +26,143 @@ A lightweight Firefox WebExtension that generates QR codes for the current page 
 
 Click the badge above to visit the official Firefox Add-ons page and install QR-Fox directly in your browser.
 
-### Install from Source (For Developers)
+## Build Instructions
 
-1. Install Node.js 20+
-2. Clone this repository:
+The following instructions explain how to build an exact copy of the QR-Fox add-on from source code.
+
+### Operating System and Build Environment Requirements
+
+- **Operating System**: Windows, macOS, or Linux (x64 or ARM64)
+- **Build Environment**: Command line terminal (bash, zsh, PowerShell, or Command Prompt)
+
+### Required Programs
+
+To build QR-Fox, you must install the following programs:
+
+#### Node.js and npm
+
+QR-Fox requires **Node.js version 22 or later** to build. npm is included with Node.js.
+
+**Installation:**
+
+- **Download Node.js**: Visit https://nodejs.org/ and download the LTS version (22.x or later)
+- **Verify installation**:
+  ```bash
+  node --version
+  npm --version
+  ```
+
+Expected output (minimum):
+
+- Node.js: v22.0.0 or higher
+- npm: 10.0.0 or higher
+
+### Step-by-Step Build Instructions
+
+1. **Clone the source code repository**:
+
    ```bash
    git clone https://github.com/dodbrian/qr-fox.git
    cd qr-fox
    ```
-3. Install dependencies:
+
+2. **Install build dependencies**:
+
    ```bash
    npm install
    ```
-4. Build the extension:
+
+3. **Run the build script**:
+
    ```bash
    npm run build
    ```
-5. Load in Firefox:
-   - Navigate to `about:debugging#/runtime/this-firefox`
-   - Click "Load Temporary Add-on"
-   - Select the manifest file in the `dist/` directory
 
-### Build Package
+   This executes all necessary technical steps:
+   - Compiles TypeScript source files to JavaScript
+   - Copies static files (icons, HTML, CSS, locales)
+   - Generates the complete extension in the `dist/` directory
 
-```bash
-npm run pkg
-```
+   The `dist/` directory will contain an exact copy of the add-on ready for installation, including:
+   - `manifest.json` - Extension configuration
+   - `background/` - Background script
+   - `popup/` - Popup UI and QR generation logic
+   - `icons/` - Extension icons
+   - `_locales/` - Internationalization files
 
-This creates a signed `.xpi` package in `web-ext-artifacts/` that can be installed in Firefox.
+4. **(Optional) Create installable package**:
+
+   ```bash
+   npm run pkg
+   ```
+
+   This command performs validation, testing, builds the extension, and packages it as a `.xpi` file in `web-ext-artifacts/`:
+   - Runs all quality checks (format, lint, i18n validation)
+   - Executes the test suite
+   - Compiles the extension
+   - Creates a `.xpi` package ready for Firefox installation
+
+   Note: The `.xpi` package is created locally and must be signed through Mozilla's signing service before it can be distributed on addons.mozilla.org.
+
+5. **(Optional) Run full validation**:
+
+   ```bash
+   npm run validate
+   ```
+
+   This runs all quality checks without creating a package:
+   - Code formatting check
+   - TypeScript and JavaScript linting
+   - Test suite execution
+   - i18n translation validation
+
+### Installing the Built Extension
+
+**Option 1: Load unpacked extension (for testing)**
+
+1. Open Firefox and navigate to `about:debugging#/runtime/this-firefox`
+2. Click "Load Temporary Add-on"
+3. Navigate to the `dist/` directory
+4. Select `manifest.json`
+5. The extension will load and be available for testing
+
+**Option 2: Install signed package**
+
+1. Navigate to the `web-ext-artifacts/` directory after running `npm run pkg`
+2. Open the `.xpi` file in Firefox (double-click or drag into Firefox window)
+3. Follow the Firefox installation prompts
+
+### Build Scripts Reference
+
+| Script           | Command                | Description                                  |
+| ---------------- | ---------------------- | -------------------------------------------- |
+| Build extension  | `npm run build`        | Compile TypeScript and copy files to `dist/` |
+| Build tests      | `npm run build:tests`  | Compile TypeScript scripts and tests         |
+| Format code      | `npm run format`       | Format all files with Prettier               |
+| Check format     | `npm run format:check` | Verify formatting without modifying files    |
+| Lint code        | `npm run lint`         | Check TypeScript and JavaScript for style    |
+| Run tests        | `npm test`             | Execute Jest test suite                      |
+| Run validation   | `npm run validate`     | Run all checks (format, lint, test, i18n)    |
+| Build and launch | `npm run start`        | Build and launch Firefox with extension      |
+| Create package   | `npm run pkg`          | Validate and create signed `.xpi` package    |
+
+### Build Output
+
+- **`dist/`** - Compiled extension ready for loading in Firefox
+- **`build/`** - Compiled TypeScript files (internal build directory)
+- **`web-ext-artifacts/`** - Signed `.xpi` packages (generated by `npm run pkg`)
+
+### Troubleshooting Build Issues
+
+If the build fails:
+
+1. Verify Node.js version: `node --version` (must be 22+)
+2. Clear node_modules and reinstall:
+   ```bash
+   rm -rf node_modules
+   npm install
+   ```
+3. Ensure you have sufficient disk space and write permissions
 
 ## Usage
 
@@ -64,40 +173,34 @@ This creates a signed `.xpi` package in `web-ext-artifacts/` that can be install
 
 ## Development
 
-### Commands
-
-| Command            | Description                               |
-| ------------------ | ----------------------------------------- |
-| `npm run build`    | Build extension to `dist/`                |
-| `npm run start`    | Build and launch Firefox with extension   |
-| `npm test`         | Run test suite                            |
-| `npm run lint`     | Check code style                          |
-| `npm run format`   | Format code with Prettier                 |
-| `npm run validate` | Run all checks (format, lint, test, i18n) |
-| `npm run pkg`      | Validate and create `.xpi` package        |
-
 ### Project Structure
 
 ```
 qr-fox/
-├── src/
-│   ├── background/      # Background script
-│   ├── popup/           # Popup UI and QR generation logic
-│   ├── icons/           # Extension icons
+├── src/                 # Source code
+│   ├── background/      # Background service worker
+│   ├── popup/           # Popup UI and QR generation
+│   ├── icons/           # Extension icons (SVG/PNG)
+│   ├── _locales/        # Internationalization (i18n)
 │   └── manifest.json    # Extension manifest
-├── scripts/             # Build and utility scripts
 ├── __tests__/           # Jest test suite
-└── dist/                # Compiled extension (generated)
+├── scripts/             # Build and utility scripts
+├── assets/              # Asset files (images, etc.)
+├── docs/                # Documentation and assets
+├── dist/                # Compiled extension (generated)
+└── .github/             # GitHub workflows (CI/CD)
 ```
 
 ### Tech Stack
 
-- **TypeScript** - Type-safe development
+- **TypeScript** - Type-safe development with strict mode
 - **ES Modules** - Modern JavaScript module system
-- **Jest** - Testing framework with coverage
+- **Jest** - Testing framework
 - **ESLint** - Code quality and style enforcement
 - **Prettier** - Code formatting
-- **web-ext** - Firefox extension tooling
+- **web-ext** - Firefox extension development and packaging
+
+For a complete list of all available build commands, see the [Build Scripts Reference](#build-scripts-reference) section in the Build Instructions.
 
 ## Helpful Resources
 
@@ -109,8 +212,6 @@ For developers interested in extending or contributing to QR-Fox, here are some 
 - [Add-ons Server API v4 Signing Documentation](https://mozilla.github.io/addons-server/topics/api/v4_frozen/signing.html) - Technical documentation for the API used to programmatically sign Firefox extensions
 
 ## Contributing
-
-See [AGENTS.md](./AGENTS.md) for detailed coding guidelines, build instructions, and contribution rules.
 
 ### Quick Guidelines
 
