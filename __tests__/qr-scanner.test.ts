@@ -63,6 +63,7 @@ describe("QR Code Scanner", () => {
   const bugReportUrls = [
     "https://storage.googleapis.com/istories/stories/2024/07/17/kopii-amerikanskikh-bespilotnikov-dlya-rossii/index.html",
     "https://www.barnimerland.de/de/bewegbar/wasser/anbieter/artikel-stand-up-paddle-verleih-werbellinkanal.html",
+    "https://meduza.io/news/2026/02/27/v-metro-berlina-poyavilis-plakaty-na-russkom-ey-imey-hot-kaplyu-uvazheniya-mudak-sdelay-telefon-potishe-nikto-ne-znaet-kto-eto-sdelal",
   ];
 
   bugReportUrls.forEach((url) => {

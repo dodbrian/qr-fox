@@ -95,6 +95,10 @@ const VERSION_INFO: (VersionInfo | null)[] = [
   { totalCodewords: 134, ecL: [134, 108, 26, 1, 108, 0, 0] },
   // Version 6: 172 total, 136 data, 36 EC total (18 per block), 2 blocks, 68 data/block
   { totalCodewords: 172, ecL: [172, 136, 18, 2, 68, 0, 0] },
+  // Version 7: 196 total, 156 data, 40 EC total (20 per block), 2 blocks, 78 data/block
+  { totalCodewords: 196, ecL: [196, 156, 20, 2, 78, 0, 0] },
+  // Version 8: 242 total, 194 data, 48 EC total (24 per block), 2 blocks, 97 data/block
+  { totalCodewords: 242, ecL: [242, 194, 24, 2, 97, 0, 0] },
 ];
 
 // Pre-computed format info strings (L level, masks 0-7)
@@ -111,6 +115,8 @@ const ALIGNMENT_POSITIONS: (number[] | null)[] = [
   [6, 26],
   [6, 30],
   [6, 34],
+  [6, 22, 38],
+  [6, 24, 42],
 ];
 
 interface QROptions {
@@ -282,6 +288,7 @@ function createQRCode(data: string): number[][] {
   addTimingPatterns(matrix, reserved, size);
   addDarkModule(matrix, reserved, version);
   reserveFormatAreas(reserved, size);
+  reserveVersionAreas(reserved, version, size);
 
   // Place data
   placeDataBits(matrix, reserved, interleaved, size);
@@ -305,6 +312,7 @@ function createQRCode(data: string): number[][] {
 
   // Add format info
   addFormatInfo(matrix, bestMask, size);
+  addVersionInfo(matrix, version, size);
 
   return matrix;
 }
@@ -340,7 +348,7 @@ function encodeByteMode(str: string): number[] {
  */
 function getMinVersion(byteCount: number): number | null {
   // Byte mode capacities for L level
-  const capacities = [0, 17, 32, 53, 78, 106, 134];
+  const capacities = [0, 17, 32, 53, 78, 106, 134, 154, 192];
   for (let v = 1; v < capacities.length; v++) {
     if (capacities[v] >= byteCount) return v;
   }
@@ -515,6 +523,27 @@ function reserveFormatAreas(reserved: number[][], size: number): void {
   // Around bottom-left finder
   for (let i = 0; i < 8; i++) {
     reserved[size - 1 - i][8] = 1;
+  }
+}
+
+/**
+ * Reserve version information areas.
+ * @param {number[][]} reserved - Reserved areas.
+ * @param {number} version - QR version.
+ * @param {number} size - Matrix size.
+ */
+function reserveVersionAreas(
+  reserved: number[][],
+  version: number,
+  size: number,
+): void {
+  if (version < 7) return;
+
+  for (let i = 0; i < 6; i++) {
+    for (let j = 0; j < 3; j++) {
+      reserved[i][size - 11 + j] = 1;
+      reserved[size - 11 + j][i] = 1;
+    }
   }
 }
 
@@ -761,4 +790,41 @@ function addFormatInfo(matrix: number[][], mask: number, size: number): void {
   for (let i = 0; i < 7; i++) {
     matrix[size - 7 + i][8] = bits[8 + i];
   }
+}
+
+/**
+ * Add version information bits for version 7+.
+ * @param {number[][]} matrix - QR matrix.
+ * @param {number} version - QR version.
+ * @param {number} size - Matrix size.
+ */
+function addVersionInfo(
+  matrix: number[][],
+  version: number,
+  size: number,
+): void {
+  if (version < 7) return;
+
+  const versionInfo = getVersionInfo(version);
+
+  for (let i = 0; i < 18; i++) {
+    const bit = (versionInfo >> i) & 1;
+    const row = Math.floor(i / 3);
+    const col = size - 11 + (i % 3);
+    matrix[row][col] = bit;
+    matrix[col][row] = bit;
+  }
+}
+
+/**
+ * Compute 18-bit version information value with BCH code.
+ * @param {number} version - QR version.
+ * @returns {number} Version info bits.
+ */
+function getVersionInfo(version: number): number {
+  let remainder = version;
+  for (let i = 0; i < 12; i++) {
+    remainder = (remainder << 1) ^ (((remainder >> 11) & 1) * 0x1f25);
+  }
+  return (version << 12) | (remainder & 0x0fff);
 }
