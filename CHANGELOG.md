@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/dodbrian/qr-fox/compare/v1.2.0...v1.3.0) (2026-02-27)
+
+### Bug Fixes
+
+* **build:** output .xpi file extension instead of .zip ([0fc0fa3](https://github.com/dodbrian/qr-fox/commit/0fc0fa377448b9b5f263de6459ea27c1f6866df3))
+* **qr:** support longer URLs beyond version 6 ([9151a3f](https://github.com/dodbrian/qr-fox/commit/9151a3f59b646a5d0331723ff76c73841723979d))
+
 ## [1.2.0](https://github.com/dodbrian/qr-fox/compare/v1.1.11...v1.2.0) (2026-02-11)
 
 ### Features
