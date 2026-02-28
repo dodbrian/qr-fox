@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.1](https://github.com/dodbrian/qr-fox/compare/v1.3.0...v1.3.1) (2026-02-28)
+
+### Bug Fixes
+
+* **ci:** include xpi artifact in GitHub release assets ([9aefd50](https://github.com/dodbrian/qr-fox/commit/9aefd5041e7873062a384a6a2e16a8186dbb1e96))
+
 ## [1.3.0](https://github.com/dodbrian/qr-fox/compare/v1.2.0...v1.3.0) (2026-02-27)
 
 ### Bug Fixes
