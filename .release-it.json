@@ -11,7 +11,7 @@
     "release": true,
     "releaseName": "v${version}",
     "preRelease": false,
-    "assets": ["web-ext-artifacts/*.zip"]
+    "assets": ["web-ext-artifacts/*.xpi", "web-ext-artifacts/*.zip"]
   },
   "plugins": {
     "@release-it/conventional-changelog": {
