@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/dodbrian/qr-fox/compare/v1.3.1...v1.4.0) (2026-03-10)
+
+### Features
+
+* add shortcut tooltip localization for Alt+Q functionality ([64a6b52](https://github.com/dodbrian/qr-fox/commit/64a6b52716cc939a7d334a3b941fdc2b813dae8a))
+* **popup:** add help icon to header with styling ([927167f](https://github.com/dodbrian/qr-fox/commit/927167fb79742c298b0b76716f3b7d133105713e))
+
 ## [1.3.1](https://github.com/dodbrian/qr-fox/compare/v1.3.0...v1.3.1) (2026-02-28)
 
 ### Bug Fixes
