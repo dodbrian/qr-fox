@@ -74,5 +74,9 @@
   "defaultPageTitle": {
     "message": "qr-code",
     "description": "Default filename prefix when page title is unavailable"
+  },
+  "shortcutTooltip": {
+    "message": "Alt+Q를 사용하여 이 팝업을 열 수 있습니다",
+    "description": "Tooltip for the shortcut help icon"
   }
 }

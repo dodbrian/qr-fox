@@ -74,5 +74,9 @@
   "defaultPageTitle": {
     "message": "二維碼",
     "description": "Default filename prefix when page title is unavailable"
+  },
+  "shortcutTooltip": {
+    "message": "使用 Alt+Q 開啟此彈出視窗",
+    "description": "Tooltip for the shortcut help icon"
   }
 }

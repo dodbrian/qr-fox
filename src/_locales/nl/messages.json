@@ -74,5 +74,9 @@
   "defaultPageTitle": {
     "message": "qr-code",
     "description": "Default filename prefix when page title is unavailable"
+  },
+  "shortcutTooltip": {
+    "message": "Gebruik Alt+Q om dit popup te openen",
+    "description": "Tooltip for the shortcut help icon"
   }
 }

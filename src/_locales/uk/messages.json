@@ -74,5 +74,9 @@
   "defaultPageTitle": {
     "message": "qr‑код",
     "description": "Default filename prefix when page title is unavailable"
+  },
+  "shortcutTooltip": {
+    "message": "Використайте Alt+Q, щоб відкрити це спливаюче вікно",
+    "description": "Tooltip for the shortcut help icon"
   }
 }

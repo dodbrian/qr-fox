@@ -74,5 +74,9 @@
   "defaultPageTitle": {
     "message": "二维码",
     "description": "Default filename prefix when page title is unavailable"
+  },
+  "shortcutTooltip": {
+    "message": "使用 Alt+Q 打开此弹出窗口",
+    "description": "Tooltip for the shortcut help icon"
   }
 }
