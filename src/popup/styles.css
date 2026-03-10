@@ -30,6 +30,10 @@ body {
 
 .header {
   flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 h1 {
@@ -37,6 +41,42 @@ h1 {
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -0.5px;
+}
+
+.help-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #888;
+  color: #888;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: help;
+  flex-shrink: 0;
+  line-height: 1;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.help-icon:hover {
+  border-color: #bbb;
+  color: #bbb;
+}
+
+@media (prefers-color-scheme: light) {
+  .help-icon {
+    border-color: #666;
+    color: #666;
+  }
+
+  .help-icon:hover {
+    border-color: #333;
+    color: #333;
+  }
 }
 
 .qr-display {
