@@ -2,21 +2,25 @@
  * Initialize i18n by populating text content for elements with data-i18n attribute.
  * Retrieves localized strings from the Chrome i18n API and updates DOM elements.
  * Also sets the document lang attribute to the current UI language.
- * @returns {void}
  */
 function initializeI18n(): void {
-  // Set document language to current UI language
-  const uiLanguage = chrome.i18n.getUILanguage();
-  document.documentElement.lang = uiLanguage;
+  document.documentElement.lang = chrome.i18n.getUILanguage();
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
-    const messageKey = (element as HTMLElement).getAttribute("data-i18n");
+    const el = element as HTMLElement;
+    const messageKey = el.getAttribute("data-i18n");
     if (!messageKey) return;
+
     const message = chrome.i18n.getMessage(messageKey);
-    if (message) {
-      (element as HTMLElement).textContent = message;
-    } else {
+    if (!message) {
       console.warn(`Missing i18n key: "${messageKey}"`);
+      return;
+    }
+
+    if (el.getAttribute("data-i18n-target") === "title") {
+      el.title = message;
+    } else {
+      el.textContent = message;
     }
   });
 }
