@@ -20,7 +20,7 @@
     "release": "release-it --ci --no-npm.publish \"$@\""
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^10.0.5",
+    "@release-it/conventional-changelog": "^10.0.6",
     "@types/chrome": "^0.1.37",
     "@types/jest": "^30.0.0",
     "@typescript-eslint/eslint-plugin": "^8.56.1",
