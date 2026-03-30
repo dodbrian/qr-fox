@@ -2,7 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./build",
-    "rootDir": "."
+    "rootDir": ".",
+    "types": ["vitest/globals", "node"]
   },
-  "include": ["__tests__/**/*.ts"]
+  "include": ["__tests__/**/*.ts", "__tests__/**/*.d.ts"]
 }
