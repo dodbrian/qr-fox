@@ -161,17 +161,17 @@ describe("i18n Functionality", () => {
 
   describe("chrome.i18n API", () => {
     it("should mock getMessage correctly", () => {
-      const message = global.chrome.i18n.getMessage("extensionName");
+      const message = globalThis.chrome.i18n.getMessage("extensionName");
       expect(message).toBe("QR-Fox");
     });
 
     it("should mock getUILanguage correctly", () => {
-      const lang = global.chrome.i18n.getUILanguage();
+      const lang = globalThis.chrome.i18n.getUILanguage();
       expect(lang).toBe("en");
     });
 
     it("should return fallback for missing keys", () => {
-      const message = global.chrome.i18n.getMessage("nonexistent");
+      const message = globalThis.chrome.i18n.getMessage("nonexistent");
       expect(message).toBe("[Missing: nonexistent]");
     });
 
