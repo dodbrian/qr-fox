@@ -1,12 +1,14 @@
 /**
- * Jest test setup file
+ * Test setup file
  * Mocks browser APIs like chrome.i18n and chrome.tabs
  */
 
+import { vi } from "vitest";
+
 // Mock chrome API
-global.chrome = {
+globalThis.chrome = {
   i18n: {
-    getMessage: jest.fn((messageKey: string) => {
+    getMessage: vi.fn((messageKey: string) => {
       const messages: Record<string, string> = {
         extensionName: "QR-Fox",
         extensionDescription:
@@ -32,25 +34,25 @@ global.chrome = {
       };
       return messages[messageKey] || `[Missing: ${messageKey}]`;
     }),
-    getUILanguage: jest.fn(() => "en"),
+    getUILanguage: vi.fn(() => "en"),
   },
   tabs: {
-    query: jest.fn(),
+    query: vi.fn(),
   },
   action: {
-    openPopup: jest.fn(),
+    openPopup: vi.fn(),
   },
   commands: {
     onCommand: {
-      addListener: jest.fn(),
+      addListener: vi.fn(),
     },
   },
-} as unknown as typeof chrome;
+};
 
 // Mock navigator.clipboard
 Object.assign(navigator, {
   clipboard: {
-    write: jest.fn(),
+    write: vi.fn(),
   },
 });
 
@@ -67,8 +69,8 @@ global.OffscreenCanvas = class {
   getContext(): CanvasRenderingContext2D {
     return {
       fillStyle: "",
-      fillRect: jest.fn(),
-      measureText: jest.fn(() => ({ width: 0 })),
+      fillRect: vi.fn(),
+      measureText: vi.fn(() => ({ width: 0 })),
     } as unknown as CanvasRenderingContext2D;
   }
 
@@ -78,8 +80,8 @@ global.OffscreenCanvas = class {
 } as unknown as typeof OffscreenCanvas;
 
 // Mock URL API for blob
-global.URL.createObjectURL = jest.fn(() => "blob:mock-url");
-global.URL.revokeObjectURL = jest.fn();
+global.URL.createObjectURL = vi.fn(() => "blob:mock-url");
+global.URL.revokeObjectURL = vi.fn();
 
 // Mock DOMParser
 global.DOMParser = class {
@@ -87,7 +89,7 @@ global.DOMParser = class {
     const doc = {
       documentElement: {
         tagName: "svg",
-        getAttribute: jest.fn((attr: string) => {
+        getAttribute: vi.fn((attr: string) => {
           if (attr === "width" || attr === "height") return "200";
           return null;
         }),
