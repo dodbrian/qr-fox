@@ -77,7 +77,6 @@ export default [
         describe: "readonly",
         it: "readonly",
         expect: "readonly",
-        jest: "readonly",
         beforeAll: "readonly",
         afterAll: "readonly",
         beforeEach: "readonly",
