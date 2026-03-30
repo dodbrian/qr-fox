@@ -1,7 +1,7 @@
 /**
  * QR code scanner tests to verify generated QR codes are readable
  */
-import { generateQR } from "../src/popup/qr-generator";
+import { generateQR } from "../src/popup/qr-generator.js";
 import jsQR from "jsqr";
 
 /**
