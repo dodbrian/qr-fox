@@ -33,7 +33,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^6.0.2",
     "vitest": "^4.1.2",
-    "web-ext": "^10.0.0"
+    "web-ext": "^10.1.0"
   },
   "engines": {
     "node": ">=22.0.0"
