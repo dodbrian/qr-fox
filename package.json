@@ -24,7 +24,7 @@
     "@types/chrome": "^0.1.40",
     "@typescript-eslint/eslint-plugin": "^8.59.1",
     "@typescript-eslint/parser": "^8.59.0",
-    "eslint": "^10.2.1",
+    "eslint": "^10.3.0",
     "jsqr": "^1.4.0",
     "jsdom": "^29.1.1",
     "prettier": "^3.8.3",
