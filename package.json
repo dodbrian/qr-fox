@@ -23,7 +23,7 @@
     "@release-it/conventional-changelog": "^11.0.0",
     "@types/chrome": "^0.1.42",
     "@typescript-eslint/eslint-plugin": "^8.59.3",
-    "@typescript-eslint/parser": "^8.59.2",
+    "@typescript-eslint/parser": "^8.59.4",
     "eslint": "^10.4.0",
     "jsqr": "^1.4.0",
     "jsdom": "^29.1.1",
