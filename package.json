@@ -29,7 +29,7 @@
     "jsdom": "^29.1.1",
     "prettier": "^3.9.4",
     "release-it": "^20.2.1",
-    "sharp": "^0.35.2",
+    "sharp": "^0.35.3",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
     "vitest": "^4.1.9",
