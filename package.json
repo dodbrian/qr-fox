@@ -32,7 +32,7 @@
     "sharp": "^0.35.3",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.9",
+    "vitest": "^4.1.10",
     "web-ext": "^10.4.0"
   },
   "engines": {
