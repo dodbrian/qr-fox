@@ -31,7 +31,7 @@
     "release-it": "^20.2.1",
     "sharp": "^0.35.3",
     "ts-node": "^10.9.2",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "vitest": "^4.1.10",
     "web-ext": "^10.5.0"
   },
